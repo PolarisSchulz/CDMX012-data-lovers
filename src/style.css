@@ -1,47 +1,58 @@
 @import "https://db.onlinewebfonts.com/c/12420e8c141ca7c3dff41de2d59df13e?family=Beaufort+for+LOL+Bold";
 
 :root {
-    --color-gold: #C28F2C;
-    --color-white: aliceblue;
-    --color-gray: #444444;
+  --color-gold: #c28f2c;
+  --color-white: aliceblue;
+  --color-gray: #444444;
 }
 
 .container {
-
 }
 
 h1 {
-    font-size: 120px;
-    font-family: "Beaufort for LOL Bold";
-    color: var(--color-gold);
+  font-size: 120px;
+  font-family: "Beaufort for LOL Bold";
+  color: var(--color-gold);
 }
 
 h2 {
-    font-size: 36px;
-    font-family: "Beaufort for LOL Bold";
-    color: var(--color-gold);
+  font-size: 36px;
+  font-family: "Beaufort for LOL Bold";
+  color: var(--color-gold);
 }
 
 h3 {
-    font-size: 24px;
-    font-family: "Beaufort for LOL Bold";
-    color: var(--color-gold) ;
+  font-size: 24px;
+  font-family: "Beaufort for LOL Bold";
+  color: var(--color-gold);
 }
 
 p {
-    font-size: 21px;
-    font-family: "Arial";
-    color: var(--color-white);
+  font-size: 21px;
+  font-family: "Arial";
+  color: var(--color-white);
 }
 
 .head-paragraph {
-    font-family: "Arial";
-    color: var(--color-white);
+  font-family: "Arial";
+  color: var(--color-white);
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.flex-item {
 }
 
 .footer-paragraph {
-    font-size: 14px;
-    font-weight: bolder;
-    font-family: "Arial";
-    color: var(--color-gray);
+  font-size: 14px;
+  font-weight: bolder;
+  font-family: "Arial";
+  color: var(--color-gray);
 }
+
