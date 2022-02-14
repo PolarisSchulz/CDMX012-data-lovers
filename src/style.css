@@ -1,12 +1,10 @@
 @import "https://db.onlinewebfonts.com/c/12420e8c141ca7c3dff41de2d59df13e?family=Beaufort+for+LOL+Bold";
 
+/*Selectores principales */
 :root {
   --color-gold: #c28f2c;
   --color-white: aliceblue;
   --color-gray: #444444;
-}
-
-.container {
 }
 
 h1 {
@@ -33,12 +31,50 @@ p {
   color: var(--color-white);
 }
 
+/*Selectores del header */
+.header {
+  background-color: green;
+}
+
+/*Selectores del container */
+.container {
+  background-color: brown;
+}
+
+/*Selectores del main section*/
+.main-section {
+  background-color: teal;
+}
+
+/*Selectores de la seleccion del campeon*/
+.choose-your-champion {
+  background-color: blue;
+}
+
+/*Selectores del filtro de seleccion de campeones*/
+.filter-selection {
+  background-color: chocolate;
+}
+
+/*Selectores del flex container*/
+.flex-container {
+  background-color: indigo;
+}
+
+.champion-image {
+  height: 200px;
+}
+
+.footer {
+  background-color: darkmagenta;
+}
+
 .head-paragraph {
   font-family: "Arial";
   color: var(--color-white);
 }
 
-.flex-container {
+.champion-cards {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
