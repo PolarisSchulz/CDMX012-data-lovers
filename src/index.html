@@ -7,38 +7,41 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-
 <body>
-  <header>
+
+  <header class="header">
     <h3 class="header-links">
       <ul>
-        <li>INFO</li>
-        <li>CHAMPIONS</li>
-        <li>NEWS</li>
-        <li>UNIVERSE</li>
-        <li>ESPORTS</li>
-        <li>SHOP</li>
+        <li><a href="#">INFO</a></li>
+        <li><a href="#">CHAMPIONS</a></li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="#">UNIVERSE</a></li>
+        <li><a href="#">ESPORTS</a></li>
+        <li><a href="#">SHOP</a></li>
       </ul>
     </h3>
-    <h3 class="header-btn">PLAY FREE</h3>
+    <h3> <a href="#" class="header-btn">PLAY FREE</a></h3>
   </header>
+
   <!--Banner/Slide-->
   <div class="container">
-    <section>
+    <section class="main-section">
       <h2>WELCOME TO THE RIFT </h2>
       <h1>LEARN THE BASICS</h1>
       <p class="head-paragraph">Browse the champion guide below for a rundown of the most popular game</p>
     </section>
+
     <!--Elige tu campeon, solo texto -->
-    <div>
+    <div class="choose-your-champion">
       <h2>CHOOSE YOUR</h2>
       <h1>CHAMPION</h1>
       <p class="head-paragraph">Strategists of magic, ferocious beasts, and cunning villains...
         With over 140 champions, you'll find the one that fits your playstyle perfectly.
         Dominate one or dominate them all. </p>
     </div>
+
     <!--Submenu seleccion filtrado -->
-    <nav>
+    <nav class="filter-selection">
       <h3>
         <ul>
           <li>All</li>
@@ -54,33 +57,27 @@
       </h3>
     </nav>
 
-    <div class="flex-container">
-      <!--Aquí van a ir los campeoncitos y todo lo del carrusel-->
-      <div class="flex-item" id="flex-aatrox"></div>
-      <div class="flex-item" id="flex-ahri"></div>
-      <div class="flex-item" id="flex-akali"></div>
-      <div class="flex-item" id="flex-alistar"></div>
-      <div class="flex-item" id="flex-amumu"></div>
-      <div class="flex-item" id="flex-anivia"></div>
-      <div class="flex-item" id="flex-annie"></div>
-      <div class="flex-item" id="flex-ashe"></div>
-    </div>
+    <!--Aquí van a ir los campeoncitos y todo lo del carrusel acá bien guapo-->
+    <div class="champion-cards" id="champion-cards">
 
+    </div>
   </div>
 
   <div>
-    <footer>
-      <p class="footer-paragraph">™ & © 2022 Riot Games, Inc. League of Legends and all related logos, characters, names
-        and
-        distinctive likeneses
-        thereof are exclusive property of Riot Games, Inc. All Rights Reserved.
-
+    <footer class="footer">
+      <p class="footer-paragraph">™ & © 2022 Riot
+        Games, Inc. League of Legends and all related
+        logos, characters, names
+        and distinctive likeneses thereof are
+        exclusive property of Riot Games, Inc. All
+        Rights Reserved.
         Site created by Orome and Polaris
       </p>
     </footer>
   </div>
+
 </body>
-  
+
 <div id="root"></div>
 <script src="main.js" type="module"></script>
 
