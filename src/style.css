@@ -32,22 +32,35 @@ p {
 }
 
 /*Selectores del header */
-.header {
-  background-color: red;
+.header-links {
+  background-color: transparent;
   overflow: hidden;
 }
 
-.header a {
+.info {
+  align-items: baseline;
   float: left;
   color: var(--color-gold);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
 }
 
-.header a:hover {
+.info:hover {
   background-color: #444444;
+}
+
+.header-btn {
+  background-color: transparent;
+  border: 2px solid;
+  border-color: var(--color-gold);
+  border-radius: 5px;
+  padding: 14px 28px;
+}
+
+.header-btn :hover {
+  background: var(--color-gold);
+  color: #444444;
 }
 
 /*Selectores del container */
@@ -102,3 +115,4 @@ p {
   font-family: "Arial";
   color: var(--color-gray);
 }
+
