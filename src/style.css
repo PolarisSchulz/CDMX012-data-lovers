@@ -5,6 +5,7 @@
   --color-gold: #c28f2c;
   --color-white: aliceblue;
   --color-gray: #444444;
+  --color-black: #111111;
 }
 
 h1 {
@@ -63,50 +64,9 @@ p {
   color: #444444;
 }
 
-/*Selectores del container */
-.container {
-  background-color: brown;
-}
-
-/*Selectores del main section*/
-.main-section {
-  background-color: teal;
-}
-
-/*Selectores de la seleccion del campeon*/
-.choose-your-champion {
-  background-color: blue;
-}
-
-/*Selectores del filtro de seleccion de campeones*/
-.filter-selection {
-  background-color: blueviolet;
-}
-
-/*Selectores del flex container*/
-.flex-container {
-  background-color: indigo;
-}
-
-.champion-image {
-  height: 150px;
-}
-
+/*Selectores del footer */
 .footer {
-  background-color: darkmagenta;
-}
-
-.head-paragraph {
-  font-family: "Arial";
-  color: var(--color-white);
-}
-
-.champion-cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+  background-color: var(--color-black);
 }
 
 .footer-paragraph {
@@ -114,5 +74,5 @@ p {
   font-weight: bolder;
   font-family: "Arial";
   color: var(--color-gray);
+  text-align: center;
 }
-

@@ -32,15 +32,21 @@ function buildCards() {
 
       output += `
             <div class="${id}-class" champion-card >
-              
-                <img  class="champion-image"  src="${splash}" alt="${id}">
+
+                <img  class="champion-image"  src="${splash}" alt="${id}" onclick="goToChampion(${id})">
             </div>
             `;
     }
   }
 
-  
   championCards.innerHTML += output;
 }
 
+function goToChampion(id) {
+  // obtener el dato id para poder obtener el objeto de ese campeon a partir de champion data
+  // mandarnos a champion.html
+  // llenar champion.html con los datos que obtuvimos del campeón
+}
+
 buildCards();
+
