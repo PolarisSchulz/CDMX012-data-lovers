@@ -1,0 +1,43 @@
+.head-paragraph {
+  font-family: "Arial";
+  color: var(--color-white);
+}
+
+/*Selectores del container */
+.container {
+  background-color: brown;
+}
+
+/*Selectores del main section*/
+.main-section {
+  background-color: teal;
+}
+
+/*Selectores de la seleccion del campeon*/
+.choose-your-champion {
+  background-color: blue;
+}
+
+/*Selectores del filtro de seleccion de campeones*/
+.filter-selection {
+  background-color: blueviolet;
+}
+
+/*Selectores del flex container*/
+.flex-container {
+  background-color: indigo;
+}
+
+/* Tamaño de imágenes en mosaico */
+.champion-image {
+  height: 220px;
+}
+
+/* Flex aplicado a mosaico */
+.champion-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
