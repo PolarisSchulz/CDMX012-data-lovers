@@ -23,6 +23,23 @@
   background-color: blueviolet;
 }
 
+.champClass {
+  align-items: baseline;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  padding: 14px 16px;
+}
+
+.champFilters {
+  float: right;
+  align-items: baseline;
+  text-decoration: none;
+  padding: 14px 16px;
+  display: inline;
+  white-space:nowrap;
+}
+
 /*Selectores del flex container*/
 .flex-container {
   background-color: indigo;
