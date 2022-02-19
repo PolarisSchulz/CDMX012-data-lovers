@@ -44,13 +44,37 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
     
   }
 
-  /*Barra de navegación*/
+/*Barra de navegación*/
   .filter-options {
     display: flex;
     align-items: baseline;
     text-align: center;
     justify-content: center;
     padding: 12px 16px;
+  }
+
+  .search-bar {
+    font-family: "Arial";
+    font-size: 20px;
+    text-align: center;
+    padding: 0.30rem 0.50rem;
+    border-radius: 0.25rem;
+    background-color: #25282A;
+    border-color: #25282A;
+  }
+
+  .champClass {
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    padding: 14px 16px;
+  }
+
+  .champFilters {
+    float: right;
+    text-decoration: none;
+    display: inline;
+    padding: 14px 16px;
   }
 
   .search-bar {
