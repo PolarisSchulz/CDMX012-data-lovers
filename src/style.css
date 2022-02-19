@@ -12,12 +12,17 @@ h1 {
   font-size: 120px;
   font-family: "Beaufort for LOL Bold";
   color: var(--color-gold);
+  margin: 5px;
+  padding: 3px;
+  
 }
 
 h2 {
   font-size: 36px;
   font-family: "Beaufort for LOL Bold";
   color: var(--color-gold);
+  margin: 5px;
+  padding: 5px;
 }
 
 h3 {
@@ -30,6 +35,8 @@ p {
   font-size: 21px;
   font-family: "Arial";
   color: var(--color-white);
+  margin: 5px;
+  padding: 20px;
 }
 
 /*Selectores del header */
@@ -37,32 +44,46 @@ p {
   background-color: transparent;
   overflow: hidden;
 }
+ul {
+  height: auto;
+}
 
-.info {
-  align-items: baseline;
+li .info {
+  padding: 14px 16px;
   float: left;
   color: var(--color-gold);
+  align-items: baseline;
+  margin: 5px;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
 }
+
+li a {
+  color: var(--color-gold);
+
+}
+
 
 .info:hover {
   background-color: #444444;
 }
 
-.header-btn {
-  background-color: transparent;
+li .header-btn {
+  position: absolute;
+  right: 0;
   border: 2px solid;
   border-color: var(--color-gold);
   border-radius: 5px;
-  padding: 14px 28px;
-}
+} 
 
 .header-btn :hover {
   background: var(--color-gold);
   color: #444444;
 }
+
+
+
+
 
 /*Selectores del footer */
 .footer {
