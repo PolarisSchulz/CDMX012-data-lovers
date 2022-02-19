@@ -9,19 +9,18 @@
 </head>
 
 <body>
-
   <header>
-    <h3 class="header-links">
+    <div class="header-links">
       <ul style="list-style-type: none;">
-        <li><a href="" class="info">INFO</a></li>
-        <li><a href="" class="info">CHAMPIONS</a></li>
-        <li><a href="" class="info">NEWS</a></li>
-        <li><a href="" class="info">UNIVERSE</a></li>
-        <li><a href="" class="info">ESPORTS</a></li>
-        <li><a href="" class="info">SHOP</a></li>
-        <li><a href="" class="header-btn">PLAY FREE</a></li>
+        <li><a href="" class="info"><h3>INFO</h3></a></li>
+        <li><a href="" class="info"><h3>CHAMPIONS</h3></a></li>
+        <li><a href="" class="info"><h3>NEWS</h3></a></li>
+        <li><a href="" class="info"><h3>UNIVERSE</h3></a></li>
+        <li><a href="" class="info"><h3>ESPORTS</h3></a></li>
+        <li><a href="" class="info"><h3>SHOP</h3></a></li>
+        <li><a href="" class=" info header-btn"><h3>PLAY FREE</h3></a></li>
       </ul>
-    </h3>
+    </div>
   </header>
 
   <!--Banner/Slide-->
@@ -34,28 +33,56 @@
 
     <!--Elige tu campeon, solo texto -->
     <div class="choose-your-champion">
+      <div class="choose-your-champion-margin">
       <h2>CHOOSE YOUR</h2>
       <h1>CHAMPION</h1>
       <p class="head-paragraph">Strategists of magic, ferocious beasts, and cunning villains...
         With over 140 champions, you'll find the one that fits your playstyle perfectly.
         Dominate one or dominate them all. </p>
+      </div>
     </div>
 
     <!--Submenu seleccion filtrado -->
     <nav class="filter-selection">
-      <h3>
-        <ul>
-          <li>All</li>
-          <li>Assassins</li>
-          <li>Fighters</li>
-          <li>Mages</li>
-          <li>Marksmen</li>
-          <li>Supports</li>
-          <li>Tanks</li>
-          <li>Difficulty</li>
-          <li>Stats</li>
+      <div>
+        <ul class="filter-options">
+          <li class="champClass" ><input type="text" class="search-bar" placeholder="Search by name"></input></li>
+          <li class="champClass"><h3>All</h3></li>
+          <li class="champClass"><h3>Assassins</h3></li>
+          <li class="champClass"><h3>Fighters</h3></li>
+          <li class="champClass"><h3>Mages</h3></li>
+          <li class="champClass"><h3>Marksmen</h3></li>
+          <li class="champClass"><h3>Supports</h3></li>
+          <li class="champClass"><h3>Tanks</h3></li>
+          
+
+
+          <li class="dropdown">
+            <h3 class="dropbtn">Difficutly</h3>
+            <div class="dropdown-content" >
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+            </div>
+          </li>
+            
+          <li class="dropdown">
+            <h3 class="dropbtn">Stats</h3>
+            <div class="dropdown-content" >
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+              <a href="#">Link 4</a>
+            </div>
+          </li>
+
+
+          
+
+
+
+
         </ul>
-      </h3>
+      </div>
     </nav>
 
     <!--Aquí van a ir los campeoncitos y todo lo del carrusel acá bien guapo-->
@@ -84,4 +111,5 @@
 
 
 </html>
+
 
