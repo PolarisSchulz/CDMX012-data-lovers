@@ -32,7 +32,6 @@ function buildCards() {
 
       output += `
             <div class="${id}-class" champion-card >
-
                 <img  class="champion-image"  src="${splash}" alt="${id}" onclick="goToChampion(${id})">
             </div>
             `;
