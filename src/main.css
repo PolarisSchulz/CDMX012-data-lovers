@@ -91,9 +91,6 @@ td {
 }
 
 /*Selectores del filtro de seleccion de campeones*/
-.filter-selection {
-  background-color: blueviolet;
-}
 
 /*Barra de navegación*/
 .filter-options {
@@ -101,18 +98,29 @@ td {
   align-items: baseline;
   text-align: center;
   justify-content: center;
-  padding: 12px 16px;
+  padding: 1rem;
+  background: linear-gradient(
+    270deg,
+    rgba(20, 24, 27, 0) 0%,
+    rgba(20, 24, 27, 1) 100%
+  );
 }
 
 .search-bar {
-  font-family: "Arial";
-  font-size: 20px;
+  font-family: "Beaufort for LOL Bold";
+  font-size: 22px;
   color: #c28f2c;
   text-align: center;
   padding: 0.3rem 0.5rem;
-  border-radius: 0.25rem;
-  background-color: #25282a;
-  border-color: #25282a;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+  border: none;
+  outline: none;
+  background-color: var(--color-gray-bar);
+}
+.search-bar:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .champClass {
@@ -127,16 +135,6 @@ td {
   text-decoration: none;
   display: inline;
   padding: 14px 16px;
-}
-
-.search-bar {
-  font-family: "Arial";
-  font-size: 20px;
-  text-align: center;
-  padding: 0.3rem 0.5rem;
-  border-radius: 0.25rem;
-  background-color: #25282a;
-  border-color: #25282a;
 }
 
 .champClass {
@@ -155,7 +153,7 @@ td {
 
 /*Selectores del flex container*/
 .flex-container {
-  background-color: indigo;
+  background-color: var(--color-black);
 }
 
 /* Tamaño de imágenes en mosaico */
