@@ -1,14 +1,20 @@
-import { example } from "./data.js";
+//import { example } from "./data.js";
 import lolData from "./data/lol/lol.js";
 
+//------------ Definición de variables, chí cheñol ------------//
+
+// Variables para mosaico //
 let championData = lolData.data;
 let championCards = document.getElementById("champion-cards");
 
+// Variables para filtros //
+
+//------------ Función para mosaico de campeones ------------//
 function buildCards() {
   let output = "";
 
   //function buildCarrousel() {
-  // Integrar función para carrousel de tarjetas de campeón }
+  //Integrar función para carrousel de tarjetas de campeón }
 
   for (let champion in championData) {
     if (championData.hasOwnProperty(champion)) {
@@ -41,6 +47,7 @@ function buildCards() {
   championCards.innerHTML += output;
 }
 
+//------------ Función para segunda vista (goToChampion) ------------//
 function goToChampion(id) {
   // obtener el dato id para poder obtener el objeto de ese campeon a partir de champion data
   // mandarnos a champion.html
@@ -48,4 +55,3 @@ function goToChampion(id) {
 }
 
 buildCards();
-

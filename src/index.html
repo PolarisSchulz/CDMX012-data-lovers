@@ -9,36 +9,59 @@
 </head>
 
 <body>
+  <!--Menu principal -->
   <header>
     <div class="header-links">
       <ul style="list-style-type: none;">
-        <li><a href="" class="info"><h3>INFO</h3></a></li>
-        <li><a href="" class="info"><h3>CHAMPIONS</h3></a></li>
-        <li><a href="" class="info"><h3>NEWS</h3></a></li>
-        <li><a href="" class="info"><h3>UNIVERSE</h3></a></li>
-        <li><a href="" class="info"><h3>ESPORTS</h3></a></li>
-        <li><a href="" class="info"><h3>SHOP</h3></a></li>
-        <li><a href="" class=" info header-btn"><h3>PLAY FREE</h3></a></li>
+        <li><a href="https://www.leagueoflegends.com/en-us/how-to-play/" class="info" target="_blank"
+            rel="noopener noreferrer">
+            <h3>INFO</h3>
+          </a></li>
+        <li><a href="#choose-your-champion" class="info">
+            <h3>CHAMPIONS</h3>
+          </a></li>
+        <li><a href="https://www.leagueoflegends.com/en-us/news/" class="info" target="_blank"
+            rel="noopener noreferrer">
+            <h3>NEWS</h3>
+          </a></li>
+        <li><a href="https://universe.leagueoflegends.com/en_US/" class="info" target="_blank"
+            rel="noopener noreferrer">
+            <h3>UNIVERSE</h3>
+          </a></li>
+        <li><a href="https://lolesports.com/en_US/" class="info" target="_blank" rel="noopener noreferrer">
+            <h3>ESPORTS</h3>
+          </a></li>
+        <li><a href="https://merch.riotgames.com/en-us/" class="info" target="_blank" rel="noopener noreferrer">
+            <h3>SHOP</h3>
+          </a></li>
+        <li><a href="https://signup.lan.leagueoflegends.com/es/signup/index" class="info header-btn" target="_blank"
+            rel="noopener noreferrer">
+            <h3>PLAY FREE</h3>
+          </a></li>
       </ul>
     </div>
   </header>
 
   <!--Banner/Slide-->
   <div class="container">
-    <section class="main-section">
-      <h2>WELCOME TO THE RIFT </h2>
-      <h1>LEARN THE BASICS</h1>
-      <p class="head-paragraph">Browse the champion guide below for a rundown of the most popular game</p>
-    </section>
+
+    <div class="main-section">
+      <section class="main-section-margin-opacity">
+        <h2>WELCOME TO THE RIFT </h2>
+        <h1>LEARN THE BASICS</h1>
+        <p>Browse the champion guide below for a rundown of the most popular game</p>
+      </section>
+    </div>
+
 
     <!--Elige tu campeon, solo texto -->
-    <div class="choose-your-champion">
+    <div class="choose-your-champion" id="choose-your-champion">
       <div class="choose-your-champion-margin">
-      <h2>CHOOSE YOUR</h2>
-      <h1>CHAMPION</h1>
-      <p class="head-paragraph">Strategists of magic, ferocious beasts, and cunning villains...
-        With over 140 champions, you'll find the one that fits your playstyle perfectly.
-        Dominate one or dominate them all. </p>
+        <h2>CHOOSE YOUR</h2>
+        <h1>CHAMPION</h1>
+        <p>Strategists of magic, ferocious beasts, and cunning villains... <br>
+          With over 140 champions, you'll find the one that fits your playstyle perfectly. <br>
+          Dominate one or dominate them all. </p>
       </div>
     </div>
 
@@ -46,41 +69,46 @@
     <nav class="filter-selection">
       <div>
         <ul class="filter-options">
-          <li class="champClass" ><input type="text" class="search-bar" placeholder="Search by name"></input></li>
-          <li class="champClass"><h3>All</h3></li>
-          <li class="champClass"><h3>Assassins</h3></li>
-          <li class="champClass"><h3>Fighters</h3></li>
-          <li class="champClass"><h3>Mages</h3></li>
-          <li class="champClass"><h3>Marksmen</h3></li>
-          <li class="champClass"><h3>Supports</h3></li>
-          <li class="champClass"><h3>Tanks</h3></li>
-          
-
-
+          <li class="champClass"><input type="text" class="search-bar" placeholder="Search by name"></input></li>
+          <li class="champClass">
+            <h3>All</h3>
+          </li>
+          <li class="champClass">
+            <h3>Assassins</h3>
+          </li>
+          <li class="champClass">
+            <h3>Fighters</h3>
+          </li>
+          <li class="champClass">
+            <h3>Mages</h3>
+          </li>
+          <li class="champClass">
+            <h3>Marksmen</h3>
+          </li>
+          <li class="champClass">
+            <h3>Supports</h3>
+          </li>
+          <li class="champClass">
+            <h3>Tanks</h3>
+          </li>
+          <!--Desplegablesdel filtrado -->
           <li class="dropdown">
-            <h3 class="dropbtn">Difficutly</h3>
-            <div class="dropdown-content" >
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
+            <h3 class="dropbtn">Difficulty</h3>
+            <div class="dropdown-content">
+              <a href="#">Greater difficulty</a>
+              <a href="#">Minor difficulty</a>
             </div>
           </li>
-            
+
           <li class="dropdown">
             <h3 class="dropbtn">Stats</h3>
-            <div class="dropdown-content" >
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-              <a href="#">Link 4</a>
+            <div class="dropdown-content">
+              <a href="#">Highest attack</a>
+              <a href="#">Lowest attack</a>
+              <a href="#">Highest defense</a>
+              <a href="#">Lowest defense</a>
             </div>
           </li>
-
-
-          
-
-
-
-
         </ul>
       </div>
     </nav>
@@ -93,14 +121,34 @@
 
   <div>
     <footer class="footer">
-      <p class="footer-paragraph">™ & © 2022 Riot
-        Games, Inc. League of Legends and all related
-        logos, characters, names
-        and distinctive likeneses thereof are
-        exclusive property of Riot Games, Inc. All
-        Rights Reserved.
+
+      <div class="social-networks">
+        Acá faltan los logos centrados y de color gris, no olvidar, primer aviso xd
+      </div>
+      <div class="riotbar-game-rating-rectangle">
+        <div class="riotbar-game-rating-block">
+          <div class="riotbar-game-rating">
+            <img
+              src="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt873108b7788eccd8/5e4ce144f2815f2507d7571b/na-esrb.png?height=100disable=upscale">
+
+            <div class="riotbar-game-rating-text">
+              Blood<br>
+              Fantasy Violence<br>
+              Mild Suggestive Themes<br>
+              Use of Alcohol and Tobacco<br>
+              Online Interactions Not
+              Rated by the ESRB<br></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer-paragraph">
+        ™ & © 2022 Riot Games, Inc. League of Legends and all related logos, characters, names and distinctive
+        likenesses thereof are exclusive property of Riot Games, Inc.
+        All Rights Reserved.<br>
         Site created by Orome and Polaris
-      </p>
+      </div>
+
     </footer>
   </div>
 
@@ -111,5 +159,3 @@
 
 
 </html>
-
-
