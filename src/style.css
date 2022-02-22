@@ -53,27 +53,41 @@ ul {
 }
 
 /*Menu principal */
-li .info {
-  padding: 14px 16px;
+.main-menu {
   float: left;
+  margin-left: 2rem;
   color: var(--color-gold);
   align-items: baseline;
-  margin: 5px;
+  padding: 1rem;
   text-align: center;
   text-decoration: none;
 }
 
-.info:hover {
+.main-menu:hover {
   background-color: var(--color-gray);
   border-radius: 10px;
 }
 
+/*Logo menu principal*/
+.logo-main-menu {
+  float: left;
+  margin-left: 2rem;
+  text-decoration: none;
+}
+
 /*Boton play free */
-li .header-btn {
-  position: absolute;
-  right: 2rem;
+.main-menu-header-btn {
+  float: right;
+  margin-right: 2rem;
   border: 3px solid;
+  padding: 1rem;
   border-color: var(--color-gold);
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.main-menu-header-btn:hover {
+  background-color: var(--color-gray);
   border-radius: 10px;
 }
 
