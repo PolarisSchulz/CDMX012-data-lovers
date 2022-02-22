@@ -35,6 +35,7 @@ p {
   font-size: 21px;
   font-family: "Arial";
   color: var(--color-white);
+  text-align: center;
   margin: 5px;
   padding: 20px;
 }
@@ -51,6 +52,7 @@ ul {
   height: auto;
 }
 
+/*Menu principal */
 li .info {
   padding: 14px 16px;
   float: left;
@@ -61,25 +63,18 @@ li .info {
   text-decoration: none;
 }
 
-li a {
-  color: var(--color-gold);
-}
-
 .info:hover {
   background-color: var(--color-gray);
+  border-radius: 10px;
 }
 
+/*Boton play free */
 li .header-btn {
   position: absolute;
-  right: 0;
-  border: 2px solid;
+  right: 2rem;
+  border: 3px solid;
   border-color: var(--color-gold);
-  border-radius: 5px;
-}
-
-.header-btn :hover {
-  background: var(--color-gold);
-  color: var(--color-gray);
+  border-radius: 10px;
 }
 
 /*Selectores del footer */
@@ -92,6 +87,7 @@ li .header-btn {
 .social-networks {
   color: aliceblue;
 }
+
 .riotbar-game-rating-rectangle {
   display: flex;
   flex-direction: row;
