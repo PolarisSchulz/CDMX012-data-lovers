@@ -12,36 +12,36 @@
 
   <!--Menu principal -->
   <header>
-    <div class="header-links">
+    <div class="headerLinks">
       <!--Logo League of Legends -->
-      <ul style="list-style-type: none;">
-        <li><a href="" class="logo-main-menu">
+      <ul>
+        <li><a href="" class="logoMainMenu">
             <img src="https://logodownload.org/wp-content/uploads/2014/09/lol-league-of-Legends-logo.png"
               alt="League of Legens" width="148"></a></li>
 
         <!--Menu principal opciones -->
-        <li><a href="https://www.leagueoflegends.com/en-us/how-to-play/" class="main-menu" target="_blank"
+        <li><a href="https://www.leagueoflegends.com/en-us/how-to-play/" class="mainMenu" target="_blank"
             rel="noopener noreferrer">
             <h3>INFO</h3>
           </a></li>
-        <li><a href="#choose-your-champion" class="main-menu">
+        <li><a href="#choose-your-champion" class="mainMenu">
             <h3>CHAMPIONS</h3>
           </a></li>
-        <li><a href="https://www.leagueoflegends.com/en-us/news/" class="main-menu" target="_blank"
+        <li><a href="https://www.leagueoflegends.com/en-us/news/" class="mainMenu" target="_blank"
             rel="noopener noreferrer">
             <h3>NEWS</h3>
           </a></li>
-        <li><a href="https://universe.leagueoflegends.com/en_US/" class="main-menu" target="_blank"
+        <li><a href="https://universe.leagueoflegends.com/en_US/" class="mainMenu" target="_blank"
             rel="noopener noreferrer">
             <h3>UNIVERSE</h3>
           </a></li>
-        <li><a href="https://lolesports.com/en_US/" class="main-menu" target="_blank" rel="noopener noreferrer">
+        <li><a href="https://lolesports.com/en_US/" class="mainMenu" target="_blank" rel="noopener noreferrer">
             <h3>ESPORTS</h3>
           </a></li>
-        <li><a href="https://merch.riotgames.com/en-us/" class="main-menu" target="_blank" rel="noopener noreferrer">
+        <li><a href="https://merch.riotgames.com/en-us/" class="mainMenu" target="_blank" rel="noopener noreferrer">
             <h3>SHOP</h3>
           </a></li>
-        <li><a href="https://signup.lan.leagueoflegends.com/es/signup/index" class="main-menu-header-btn"
+        <li><a href="https://signup.lan.leagueoflegends.com/es/signup/index" class="mainMenuHeaderBotton"
             target="_blank" rel="noopener noreferrer">
             <h3>PLAY FREE</h3>
           </a></li>
@@ -51,8 +51,8 @@
 
   <!--Banner/Slide-->
   <div class="container">
-    <div class="main-section">
-      <section class="main-section-margin-opacity">
+    <div class="mainSection">
+      <section class="mainSectionMarginOpacity">
         <h2>WELCOME TO THE RIFT </h2>
         <h1>LEARN THE BASICS</h1>
         <p>Browse the champion guide below for a rundown of the most popular game</p>
@@ -61,43 +61,61 @@
 
 
     <!--Elige tu campeon, solo texto -->
-    <div class="choose-your-champion" id="choose-your-champion">
-      <div class="choose-your-champion-margin">
+    <div class="chooseYourChampion" id="choose-your-champion">
+      <div class="chooseYourChampionMargin">
         <h2>CHOOSE YOUR</h2>
         <h1>CHAMPION</h1>
-        <p>Strategists of magic, ferocious beasts, and cunning villains... <br>
+        <p>Strategists of magic, ferocious beasts, and cunning villains...
           With over 140 champions, you'll find the one that fits your playstyle perfectly. <br>
           Dominate one or dominate them all. </p>
       </div>
     </div>
 
     <!--Submenu seleccion filtrado -->
-    <nav class="filter-selection">
+    <nav>
       <div>
         <ul class="filter-options">
-          <li class="champClass"><input type="text" class="search-bar" placeholder="Search by name"></input></li>
-          <li class="champClass" id="filter-all">
-            <h3>All</h3>
+          <li><input type=" text" class="search-bar" placeholder="Search by name"></input></li>
+          <li class="champClass">
+
+            <button class="champClass_button" id="filter_all" value="All">
+              All
+            </button>
           </li>
-          <li class="champClass" id="filter-assassins">
-            <h3>Assassins</h3>
+          <li class="champClass">
+
+            <button class="champClass_button" value="Assassin">
+              Assassins
+            </button>
+
           </li>
           <li class="champClass" id="filter-fighters">
-            <h3>Fighters</h3>
+            <button class="champClass_button" value="Fighter">
+              Fighters
+            </button>
           </li>
           <li class="champClass" id="filter-mages">
-            <h3>Mages</h3>
+            <button class="champClass_button" value="Mage">
+              Mages
+            </button>
           </li>
           <li class="champClass" id="filter-marksmen">
-            <h3>Marksmen</h3>
+            <button class="champClass_button" value="Marksman">
+              Marksmen
+            </button>
           </li>
           <li class="champClass" id="filter-supports">
-            <h3>Supports</h3>
+            <button class="champClass_button" value="Support">
+              Supports
+            </button>
           </li>
           <li class="champClass" id="filter-tanks">
-            <h3>Tanks</h3>
+            <button class="champClass_button" value="Tank">
+              Tanks
+            </button>
           </li>
-          <!--Desplegablesdel filtrado -->
+
+          <!--Desplegables del filtrado -->
           <li class="dropdown">
             <h3 class="dropbtn">Difficulty</h3>
             <div class="dropdown-content">
