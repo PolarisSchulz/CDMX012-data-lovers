@@ -41,7 +41,7 @@ p {
 }
 
 /*Selectores del header */
-.header-links {
+.headerLinks {
   background-color: var(--color-black);
   overflow: hidden;
   padding-top: 1rem;
@@ -50,10 +50,11 @@ p {
 
 ul {
   height: auto;
+  list-style-type: none;
 }
 
 /*Menu principal */
-.main-menu {
+.mainMenu {
   float: left;
   margin-left: 2rem;
   color: var(--color-gold);
@@ -63,20 +64,20 @@ ul {
   text-decoration: none;
 }
 
-.main-menu:hover {
+.mainMenu:hover {
   background-color: var(--color-gray);
   border-radius: 10px;
 }
 
 /*Logo menu principal*/
-.logo-main-menu {
+.logoMainMenu {
   float: left;
   margin-left: 2rem;
   text-decoration: none;
 }
 
 /*Boton play free */
-.main-menu-header-btn {
+.mainMenuHeaderBotton {
   float: right;
   margin-right: 2rem;
   border: 3px solid;
@@ -86,7 +87,7 @@ ul {
   text-decoration: none;
 }
 
-.main-menu-header-btn:hover {
+.mainMenuHeaderBotton:hover {
   background-color: var(--color-gray);
   border-radius: 10px;
 }
