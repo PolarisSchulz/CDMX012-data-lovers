@@ -47,7 +47,14 @@ td {
 
 /*Selectores del main section*/
 
-.main-section-margin-opacity {
+.mainSection {
+  position: relative;
+  background-size: cover;
+  background-image: url("https://empolgouesportshome.files.wordpress.com/2020/08/orig_494006.jpg");
+  text-align: center;
+}
+
+.mainSectionMarginOpacity {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -61,16 +68,13 @@ td {
   );
 }
 
-.main-section {
-  position: relative;
-  background-size: cover;
-  background-image: url("https://empolgouesportshome.files.wordpress.com/2020/08/orig_494006.jpg");
-  text-align: center;
-}
-
 /*Selectores de la seleccion del campeon*/
 
-.choose-your-champion-margin {
+.choose-your-champion {
+  align-items: center;
+}
+
+.chooseYourChampionMargin {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -86,12 +90,7 @@ td {
   );
 }
 
-.choose-your-champion {
-  align-items: center;
-}
-
 /*Selectores del filtro de seleccion de campeones*/
-
 /*Barra de navegación*/
 .filter-options {
   display: flex;
@@ -112,12 +111,13 @@ td {
   color: #c28f2c;
   text-align: center;
   padding: 0.3rem 0.5rem;
-  border-radius: 10px;
-  transition-duration: 0.4s;
   border: none;
+  border-radius: 5px;
   outline: none;
   background-color: var(--color-gray-bar);
+  margin-right: 1rem;
 }
+
 .search-bar:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -126,22 +126,24 @@ td {
 .champClass {
   text-align: center;
   text-decoration: none;
-  display: inline;
   padding: 14px 16px;
+  border: none;
+  font-size: 24px;
+  font-family: "Beaufort for LOL Bold";
+  color: var(--color-gold);
 }
 
-.champFilters {
-  float: right;
-  text-decoration: none;
-  display: inline;
-  padding: 14px 16px;
+.champClass:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.champClass {
-  text-align: center;
-  text-decoration: none;
-  display: inline;
-  padding: 14px 16px;
+.champClass_button {
+  background-color: rgba(17, 17, 17, 0);
+  border: none;
+  font-size: 24px;
+  font-family: "Beaufort for LOL Bold";
+  color: var(--color-gold);
 }
 
 .champFilters {
@@ -187,7 +189,7 @@ td {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #525b61;
   min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
