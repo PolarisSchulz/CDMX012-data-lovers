@@ -1,78 +1,213 @@
-//import { example } from "./data.js";
-import lolData from "./data/lol/lol.js";
-import { filterFunction } from "./data.js";
+/* css normalization  */
 
-//------------ Definición de variables, chí cheñol ------------//
-
-// Variables para mosaico //
-let championData = lolData.data;
-let championCards = document.getElementById("champion-cards");
-
-// Variables para filtros //
-const filter_all = document.getElementById("filter_all");
-
-//------------ Función para mosaico de campeones ------------//
-function buildCards(champions) {
-  championCards.innerHTML = "";
-  let output = "";
-  //function buildCarrousel() {
-  //Integrar función para carrousel de tarjetas de campeón }
-
-  for (let champion in champions) {
-    if (champions.hasOwnProperty(champion)) {
-      let championObjectData = champions[champion];
-      //console.log(championObjectData);
-      // let {
-      //   blurb,
-      //   id,
-      //   image,
-      //   img,
-      //   info,
-      //   key,
-      //   name,
-      //   partype,
-      //   splash,
-      //   stats,
-      //   tags,
-      //   title,
-      //   version,
-      // } = championObjectData;
-
-      let id = championObjectData.id;
-      let splash = championObjectData.splash;
-
-      output += `
-            <div class="${id}-class" champion-card >
-                <img  class="champion-image"  src="${splash}" alt="${id}" onclick="goToChampion(${id})">
-            </div>
-            `;
-    }
-  }
-
-  championCards.innerHTML += output;
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
 }
 
-//------------ Función para filtros por clase de campeón ------------//
+:root {
+  --color-gold: #c28f2c;
+  --color-white: aliceblue;
+  --color-gray: #444444;
+  --color-black: #111111;
+  --color-gray-bar: #364044;
+}
 
-document.querySelectorAll(".champClass_button").forEach((button) => {
-  button.addEventListener("click", (event) => {
-    let championDataArray = Object.values(championData);
+/*Selectores del container */
+.container {
+  background: rgb(20, 24, 27);
+  background: linear-gradient(
+    90deg,
+    rgba(20, 24, 27, 1) 0%,
+    rgba(82, 91, 97, 1) 100%
+  );
+}
 
-    let finalArray = filterFunction(championDataArray, event.target.value);
+/*Selectores del main section*/
 
-    // console.log("finalArray => ", finalArray);
+.mainSection {
+  position: relative;
+  background-size: cover;
+  background-image: url("https://empolgouesportshome.files.wordpress.com/2020/08/orig_494006.jpg");
+  text-align: center;
+}
 
-    buildCards(finalArray);
-  });
-});
-filter_all.addEventListener("click", () => {
-  buildCards(championData);
-});
-//------------ Función para segunda vista (goToChampion) ------------//
-//function goToChampion(id) {
-// obtener el dato id para poder obtener el objeto de ese campeon a partir de champion data
-// mandarnos a champion.html
-// llenar champion.html con los datos que obtuvimos del campeón
-//}
+.mainSectionMarginOpacity {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 30rem;
+  padding-bottom: 30rem;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 24, 27, 0) 0%,
+    rgba(20, 24, 27, 1) 100%
+  );
+}
 
-buildCards(championData);
+/*Selectores de la seleccion del campeon*/
+
+.choose-your-champion {
+  align-items: center;
+}
+
+.chooseYourChampionMargin {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: rgb(20, 24, 27);
+  background: linear-gradient(
+    0deg,
+    rgba(20, 24, 27, 0) 0%,
+    rgba(20, 24, 27, 1) 100%
+  );
+}
+
+/*Selectores del filtro de seleccion de campeones*/
+/*Barra de navegación*/
+.filter-options {
+  display: flex;
+  align-items: baseline;
+  text-align: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(
+    270deg,
+    rgba(20, 24, 27, 0) 0%,
+    rgba(20, 24, 27, 1) 100%
+  );
+}
+
+.search-bar {
+  font-family: "Beaufort for LOL Bold";
+  font-size: 22px;
+  color: #c28f2c;
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--color-gray-bar);
+  margin-right: 1rem;
+}
+
+.search-bar:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.champClass {
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 16px;
+  border: none;
+  font-size: 24px;
+  font-family: "Beaufort for LOL Bold";
+  color: var(--color-gold);
+}
+
+.champClass:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.champClass_button {
+  background-color: rgba(17, 17, 17, 0);
+  border: none;
+  font-size: 24px;
+  font-family: "Beaufort for LOL Bold";
+  color: var(--color-gold);
+}
+
+.champFilters {
+  float: right;
+  text-decoration: none;
+  display: inline;
+  padding: 14px 16px;
+}
+
+/*Selectores del flex container*/
+.flex-container {
+  background-color: var(--color-black);
+}
+
+/* Tamaño de imágenes en mosaico */
+.champion-image {
+  height: 220px;
+}
+
+/* Flex aplicado a mosaico */
+.champion-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dropbtn {
+  /* background-color: #04AA6D; */
+  /* color: white; */
+  padding: 16px;
+  /* font-size: 16px; */
+  /* border: none; */
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #525b61;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: var(--color-gold);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "Beaufort for LOL Bold";
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Este hover cambia el color de el boton del menu cuando se esta haciendo hover en el */
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
