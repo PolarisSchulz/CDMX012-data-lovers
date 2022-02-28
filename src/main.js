@@ -1,6 +1,12 @@
 //import { example } from "./data.js";
 import lolData from "./data/lol/lol.js";
-import { filterFunction } from "./data.js";
+import {
+  filterFunction,
+  lowDifficultyFunction,
+  highToLowAttackFunction,
+  midDifficultyFunction,
+  highDifficultyFunction,
+} from "./data.js";
 
 //------------ Definición de variables, chí cheñol ------------//
 
@@ -57,22 +63,58 @@ function buildCards(champions) {
 document.querySelectorAll(".champClass_button").forEach((button) => {
   button.addEventListener("click", (event) => {
     let championDataArray = Object.values(championData);
-
-    let finalArray = filterFunction(championDataArray, event.target.value);
-
-    // console.log("finalArray => ", finalArray);
-
-    buildCards(finalArray);
+    let finalClassArray = filterFunction(championDataArray, event.target.value);
+    buildCards(finalClassArray);
   });
 });
+
 filter_all.addEventListener("click", () => {
   buildCards(championData);
 });
+
+//------------ Función para filtros por dificultad ------------//
+const lowDifficulty = document.querySelector(".lowDifficulty");
+const moderateDifficulty = document.querySelector(".moderateDifficulty");
+const highDifficulty = document.querySelector(".highDifficulty");
+
+// Low Difficulty //
+lowDifficulty.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalLowDiffArray = lowDifficultyFunction(championDataArray);
+  buildCards(finalLowDiffArray);
+});
+
+// Moderate Difficulty //
+moderateDifficulty.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalMidDiffArray = midDifficultyFunction(championDataArray);
+  buildCards(finalMidDiffArray);
+});
+
+// High Difficulty //
+highDifficulty.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalHighDiffArray = highDifficultyFunction(championDataArray);
+  buildCards(finalHighDiffArray);
+});
+
+//------------ Función para filtros por ataque/defensa ------------//
+const highestAttack = document.querySelector(".highestAttack");
+const lowestAttack = document.querySelector(".lowestAttack");
+const highestDefense = document.querySelector(".highestDefense");
+const lowestDefense = document.querySelector(".lowestDefense");
+
+highestAttack.addEventListener("click", (event) => {
+  let championDataArray = Object.values(championData);
+  let finalHighAtkArray = highToLowAttackFunction(championDataArray);
+  console.log(finalHighAtkArray);
+});
+
 //------------ Función para segunda vista (goToChampion) ------------//
 //function goToChampion(id) {
 // obtener el dato id para poder obtener el objeto de ese campeon a partir de champion data
 // mandarnos a champion.html
 // llenar champion.html con los datos que obtuvimos del campeón
-//}
+// }
 
 buildCards(championData);
