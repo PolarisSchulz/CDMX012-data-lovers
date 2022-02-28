@@ -1,6 +1,12 @@
 //import { example } from "./data.js";
 import lolData from "./data/lol/lol.js";
-import { filterFunction, lowDifficultyFunction, highToLowAttackFunction } from "./data.js";
+import {
+  filterFunction,
+  lowDifficultyFunction,
+  highToLowAttackFunction,
+  midDifficultyFunction,
+  highDifficultyFunction,
+} from "./data.js";
 
 //------------ Definición de variables, chí cheñol ------------//
 
@@ -72,19 +78,25 @@ const moderateDifficulty = document.querySelector(".moderateDifficulty");
 const highDifficulty = document.querySelector(".highDifficulty");
 
 // Low Difficulty //
-lowDifficulty.addEventListener("click", (event) => {
+lowDifficulty.addEventListener("click", () => {
   let championDataArray = Object.values(championData);
-  const rangeDifficulty = 3;
-  const getLowDifficulty =  championDataArray.filter((e)=>( e.info.difficulty <= rangeDifficulty));
-  //console.log("Low difficulty champs from", getLowDifficulty);
   let finalLowDiffArray = lowDifficultyFunction(championDataArray);
-  // console.log("Revisando array de dificultad baja desde", finalLowDiffArray);
   buildCards(finalLowDiffArray);
 });
 
 // Moderate Difficulty //
+moderateDifficulty.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalMidDiffArray = midDifficultyFunction(championDataArray);
+  buildCards(finalMidDiffArray);
+});
 
-
+// High Difficulty //
+highDifficulty.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalHighDiffArray = highDifficultyFunction(championDataArray);
+  buildCards(finalHighDiffArray);
+});
 
 //------------ Función para filtros por ataque/defensa ------------//
 const highestAttack = document.querySelector(".highestAttack");
@@ -95,9 +107,7 @@ const lowestDefense = document.querySelector(".lowestDefense");
 highestAttack.addEventListener("click", (event) => {
   let championDataArray = Object.values(championData);
   let finalHighAtkArray = highToLowAttackFunction(championDataArray);
-  console.log(finalHighAtkArray)
-
-
+  console.log(finalHighAtkArray);
 });
 
 //------------ Función para segunda vista (goToChampion) ------------//
