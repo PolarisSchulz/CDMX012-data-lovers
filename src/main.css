@@ -146,6 +146,10 @@ td {
   color: var(--color-gold);
 }
 
+.champClass_button:focus {
+  color: var(--color-white);
+}
+
 .champFilters {
   float: right;
   text-decoration: none;
