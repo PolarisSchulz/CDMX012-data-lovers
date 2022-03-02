@@ -1,1 +1,16 @@
-/* Aquí va a ir el css de la segunda vista xD */
+/* Espacio p'al css de la segunda vista xD */
+
+
+
+/*cochinadas de arias */
+.nodisplay {
+    display: none;
+
+}
+.display-on{
+  display: flex;
+}
+
+.display-off{
+  display: none;
+}
