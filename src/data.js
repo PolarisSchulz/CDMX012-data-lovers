@@ -22,7 +22,6 @@ export function lowDifficultyFunction(allChampions) {
   let arrayOfLowDiffChampions = [];
   allChampions.forEach((champion) => {
     let difficulty = champion.info.difficulty;
-    console.log(difficulty);
     const lowDiff = 3;
     if (difficulty <= lowDiff) {
       arrayOfLowDiffChampions.push(champion);
@@ -36,7 +35,6 @@ export function midDifficultyFunction(allChampions) {
   let arrayOfMidDiffChampions = [];
   allChampions.forEach((champion) => {
     let difficulty = champion.info.difficulty;
-    console.log(difficulty);
     const midDiffOne = 3;
     const midDiffTwo = 6;
     if (difficulty > midDiffOne && difficulty <= midDiffTwo) {
@@ -51,44 +49,163 @@ export function highDifficultyFunction(allChampions) {
   let arrayOfHighDiffChampions = [];
   allChampions.forEach((champion) => {
     let difficulty = champion.info.difficulty;
-    console.log(difficulty);
     const highDiff = 6;
     if (difficulty > highDiff) {
       arrayOfHighDiffChampions.push(champion);
     }
   });
+
+
   return arrayOfHighDiffChampions;
 }
 
+// Abajo de todo esto vamos a refactorizar,, esto nose queda así de cochino 
+
 // Attack Filter Function : High to Low
 export function highToLowAttackFunction(allChampions) {
-  let arrayOfHighToLowAttack = [];
-  let arrayImaginarioQueNoHemosHecho = [];
+  let sortingChampionDataArray = []
+
 
   allChampions.forEach((champion) => {
-    // declaramos championAttack , una variable que guarda el valor ataque (numero)
-    let championAttack = champion.info.attack;
-    //  primero un string de objetos, seguido por un number y ya despues hacer el array
+  let currentChampionName = champion.name
+  let currentChampionAttack = champion.info.attack
+    
+    sortingChampionDataArray.push({
+      name: currentChampionName,   
+      attack : currentChampionAttack
+     })
 
-    {
-      campeon: ataque;
-    }
-
-    arrayImaginarioQueNoHemosHecho.push();
-    // sort solo con el ataque (arreglo de objetos)
-
-    // champion => el campeon actuaal
-    // championAttack => el daño del campeón actual
-
-    // necesitamos hacer una lista de todos los campeones y sus ataques,
-    // teniendo la lista, la ordenamos de mayor a menor,
-    // [{drMundo: 6},{aatrox: 2},{akali: 5} ...]
-
-    // // se acomodan de mayor a menor ...
-
-    // [{aatrox: 2},{akali: 5},{drMundo: 6} ...]
-
-    // allChampions =>  ["aatrox", "ahri", "akali" ... ]
-    // championsArrayOfHighToLowAttack => ["tryndamere", "dr mundo", "pantheon" ...]
   });
+  
+  let sortedArray = sortingChampionDataArray.sort(function(a, b) {
+    return parseFloat(b.attack) - parseFloat(a.attack);
+  });
+  
+ let sortedChampions = []
+
+for (let i = 0; i < sortedArray.length ; i++) {
+  const sortedElement = sortedArray[i]
+  let nameOfSortedChampion = sortedElement.name 
+
+  allChampions.forEach(elementOfAllChampions => {
+     if ( elementOfAllChampions.name == nameOfSortedChampion ) {
+       sortedChampions.push(elementOfAllChampions)
+     } 
+  });
+}
+
+return sortedChampions
+
+
+}
+
+export function lowToHighAttackFunction(allChampions) {
+  let sortingChampionDataArray = []
+
+
+  allChampions.forEach((champion) => {
+  let currentChampionName = champion.name
+  let currentChampionAttack = champion.info.attack
+    
+    sortingChampionDataArray.push({
+      name: currentChampionName,   
+      attack : currentChampionAttack
+     })
+
+  });
+  
+  let sortedArray = sortingChampionDataArray.sort(function(a, b) {
+    return parseFloat(a.attack) - parseFloat(b.attack);
+  });
+  
+ let sortedChampions = []
+
+for (let i = 0; i < sortedArray.length ; i++) {
+  const sortedElement = sortedArray[i]
+  let nameOfSortedChampion = sortedElement.name 
+
+  allChampions.forEach(elementOfAllChampions => {
+     if ( elementOfAllChampions.name == nameOfSortedChampion ) {
+       sortedChampions.push(elementOfAllChampions)
+     } 
+  });
+}
+
+return sortedChampions
+
+
+}
+
+export function highToLowDefenseFunction(allChampions) {
+  let sortingChampionDataArray = []
+
+
+  allChampions.forEach((champion) => {
+  let currentChampionName = champion.name
+  let currentChampionAttack = champion.info.defense
+    
+    sortingChampionDataArray.push({
+      name: currentChampionName,   
+      defense : currentChampionAttack
+     })
+
+  });
+  
+  let sortedArray = sortingChampionDataArray.sort(function(a, b) {
+    return parseFloat(b.defense) - parseFloat(a.defense);
+  });
+  
+ let sortedChampions = []
+
+for (let i = 0; i < sortedArray.length ; i++) {
+  const sortedElement = sortedArray[i]
+  let nameOfSortedChampion = sortedElement.name 
+
+  allChampions.forEach(elementOfAllChampions => {
+     if ( elementOfAllChampions.name == nameOfSortedChampion ) {
+       sortedChampions.push(elementOfAllChampions)
+     } 
+  });
+}
+
+return sortedChampions
+
+
+}
+
+export function lowToHighDefenseFunction(allChampions) {
+  let sortingChampionDataArray = []
+
+
+  allChampions.forEach((champion) => {
+  let currentChampionName = champion.name
+  let currentChampionAttack = champion.info.defense
+    
+    sortingChampionDataArray.push({
+      name: currentChampionName,   
+      defense : currentChampionAttack
+     })
+
+  });
+  
+  let sortedArray = sortingChampionDataArray.sort(function(a, b) {
+    return parseFloat(a.defense) - parseFloat(b.defense);
+  });
+  
+ let sortedChampions = []
+
+for (let i = 0; i < sortedArray.length ; i++) {
+  const sortedElement = sortedArray[i]
+  let nameOfSortedChampion = sortedElement.name 
+
+  allChampions.forEach(elementOfAllChampions => {
+     if ( elementOfAllChampions.name == nameOfSortedChampion ) {
+       sortedChampions.push(elementOfAllChampions)
+     } 
+  });
+}
+
+return sortedChampions
+
+
 }
