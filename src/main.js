@@ -8,7 +8,7 @@ import {
   highToLowAttackFunction,
   lowToHighAttackFunction,
   highToLowDefenseFunction,
-  lowToHighDefenseFunction
+  lowToHighDefenseFunction,
 } from "./data.js";
 
 //------------ Definición de variables, chí cheñol ------------//
@@ -17,8 +17,6 @@ import {
 let championData = lolData.data;
 let championCards = document.getElementById("champion-cards");
 let championContainer = document.getElementById("champion-container");
-
-
 
 // Variables para filtros //
 const filter_all = document.getElementById("filter_all");
@@ -31,6 +29,7 @@ function buildCards(champions) {
   //Integrar función para carrousel de tarjetas de campeón }
 
   for (let champion in champions) {
+    // eslint-disable-next-line no-prototype-builtins
     if (champions.hasOwnProperty(champion)) {
       let championObjectData = champions[champion];
       //console.log(championObjectData);
@@ -110,28 +109,28 @@ const lowestAttack = document.querySelector(".lowestAttack");
 const highestDefense = document.querySelector(".highestDefense");
 const lowestDefense = document.querySelector(".lowestDefense");
 
-// abajo de esto hay que refactorizar, esto no se queda asi de cochino 
+// abajo de esto hay que refactorizar, esto no se queda asi de cochino
 
-highestAttack.addEventListener("click", (event) => {
+highestAttack.addEventListener("click", () => {
   let championDataArray = Object.values(championData);
   let finalHighAtkArray = highToLowAttackFunction(championDataArray);
-buildCards(finalHighAtkArray)}
-);
-lowestAttack.addEventListener("click", (event) => {
+  buildCards(finalHighAtkArray);
+});
+lowestAttack.addEventListener("click", () => {
   let championDataArray = Object.values(championData);
   let finalLowAtkArray = lowToHighAttackFunction(championDataArray);
-buildCards(finalLowAtkArray)}
-);
-highestDefense.addEventListener("click", (event) => {
+  buildCards(finalLowAtkArray);
+});
+highestDefense.addEventListener("click", () => {
   let championDataArray = Object.values(championData);
   let finalHighDefArray = highToLowDefenseFunction(championDataArray);
-buildCards(finalHighDefArray)}
-);
-lowestDefense.addEventListener("click", (event) => {
+  buildCards(finalHighDefArray);
+});
+lowestDefense.addEventListener("click", () => {
   let championDataArray = Object.values(championData);
   let finalLowDefArray = lowToHighDefenseFunction(championDataArray);
-buildCards(finalLowDefArray)}
-);
+  buildCards(finalLowDefArray);
+});
 
 //------------ Función para segunda vista (goToChampion) ------------//
 //function goToChampion(id) {
@@ -141,27 +140,25 @@ buildCards(finalLowDefArray)}
 // }
 
 // declaracion de funcion, no puedo ejecutar algo que no esta declarado
-function clickFunction(e){
-  let champion = e.target.id
-  buildChampion(champion)
+function clickFunction(e) {
+  let champion = e.target.id;
+  buildChampion(champion);
   // console.log("click on champion", champion)
 }
 
-
-
-function setOnClickEvents () {
-  let cards = document.getElementsByClassName("champion-card")
+function setOnClickEvents() {
+  let cards = document.getElementsByClassName("champion-card");
   // console.log("estas son las cards ", cards)
-  for ( const card of cards ) {
-      card.addEventListener("click", clickFunction)
+  for (const card of cards) {
+    card.addEventListener("click", clickFunction);
   }
 }
 
 function buildChampion(champion) {
-  // champion = el string del nombre del campeon seleccionado 
+  // champion = el string del nombre del campeon seleccionado
   let currentChampion = championData[champion];
   // champion
-  console.log(currentChampion);
+  // console.log(currentChampion);
   // hide cards
   hideElement(championCards);
   // show card
@@ -181,13 +178,11 @@ function showElement(element) {
   element.classList.add("display-on");
 }
 
-
-
 function populateChampion(currentChampion) {
-  let name = currentChampion.name 
-  let title = currentChampion.title 
-  let splash = currentChampion.splash
-  let blurb = currentChampion.blurb 
+  let name = currentChampion.name;
+  let title = currentChampion.title;
+  let splash = currentChampion.splash;
+  let blurb = currentChampion.blurb;
 
   document.getElementById("champion-title").innerHTML = title;
   document.getElementById(
@@ -195,8 +190,6 @@ function populateChampion(currentChampion) {
   ).style.backgroundImage = `url('${splash}')`;
   document.getElementById("champion-name").innerHTML = name;
   document.getElementById("champion-blurb").innerHTML = blurb;
-
-
 }
 
 const mainMenuButton = document.getElementById("mainMenuButton");
@@ -208,4 +201,5 @@ mainMenuButton.addEventListener("click", () => {
 
 buildCards(championData);
 
-setOnClickEvents()
+setOnClickEvents();
+
