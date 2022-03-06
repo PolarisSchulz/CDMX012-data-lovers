@@ -95,33 +95,47 @@ ul {
 /*Selectores del footer */
 .footer {
   background-color: var(--color-black);
-  padding-top: 9rem;
-  padding-bottom: 9rem;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
 }
 
-.social-networks {
-  color: aliceblue;
+.logoSocialNetworks {
+  margin: 1vw;
 }
 
-.riotbar-game-rating-rectangle {
+.socialNetworks {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  font-weight: 500;
+  justify-content: center;
+}
+
+.logoRiotGames {
+  display: flex;
+  justify-content: center;
+  margin-right: 3vw;
+  margin-left: 3vw;
+}
+
+.riotbarGameRatingRectangle {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   user-select: none;
-  box-sizing: border-box;
-  font-weight: 500;
-  justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
 }
 
-.riotbar-game-rating-block {
+.riotbarGameRatingBlock {
   max-width: 100%;
   padding: 8px 12px;
   background: var(--color-gray);
   border-radius: 8px;
 }
 
-.riotbar-game-rating {
+.riotbarGameRating {
   display: block;
   background-color: transparent;
   background-size: contain;
@@ -129,7 +143,7 @@ ul {
   max-width: 100%;
 }
 
-.riotbar-game-rating-text {
+.riotbarGameRatingText {
   display: inline-block;
   text-align: left;
   color: var(--color-white);
@@ -140,18 +154,34 @@ ul {
   font-family: Arial, sans-serif;
 }
 
-.footer-paragraph {
+.footerParagraph {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: center;
   text-align: center;
   font-weight: bolder;
   font-family: "Arial";
   color: var(--color-gray);
   font-size: 14px;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1vw;
+  padding-top: 1vw;
+  margin-bottom: 1vw;
 }
 
+.footerCredits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Arial";
+  color: var(--color-gray);
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.footerCreditsDecoration {
+  text-decoration: none;
+  color: var(--color-gold);
+  margin-left: 5px;
+  margin-right: 5px;
+}
