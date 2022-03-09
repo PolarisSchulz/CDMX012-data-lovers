@@ -55,157 +55,142 @@ export function highDifficultyFunction(allChampions) {
     }
   });
 
-
   return arrayOfHighDiffChampions;
 }
 
-// Abajo de todo esto vamos a refactorizar,, esto nose queda así de cochino 
+// Abajo de todo esto vamos a refactorizar,, esto nose queda así de cochino
 
 // Attack Filter Function : High to Low
 export function highToLowAttackFunction(allChampions) {
-  let sortingChampionDataArray = []
-
+  let sortingChampionDataArray = [];
 
   allChampions.forEach((champion) => {
-  let currentChampionName = champion.name
-  let currentChampionAttack = champion.info.attack
-    
-    sortingChampionDataArray.push({
-      name: currentChampionName,   
-      attack : currentChampionAttack
-     })
+    let currentChampionName = champion.name;
+    let currentChampionAttack = champion.info.attack;
 
+    sortingChampionDataArray.push({
+      name: currentChampionName,
+      attack: currentChampionAttack,
+    });
   });
-  
-  let sortedArray = sortingChampionDataArray.sort(function(a, b) {
+
+  let sortedArray = sortingChampionDataArray.sort(function (a, b) {
     return parseFloat(b.attack) - parseFloat(a.attack);
   });
-  
- let sortedChampions = []
 
-for (let i = 0; i < sortedArray.length ; i++) {
-  const sortedElement = sortedArray[i]
-  let nameOfSortedChampion = sortedElement.name 
+  let sortedChampions = [];
 
-  allChampions.forEach(elementOfAllChampions => {
-     if ( elementOfAllChampions.name == nameOfSortedChampion ) {
-       sortedChampions.push(elementOfAllChampions)
-     } 
-  });
+  for (let i = 0; i < sortedArray.length; i++) {
+    const sortedElement = sortedArray[i];
+    let nameOfSortedChampion = sortedElement.name;
+
+    allChampions.forEach((elementOfAllChampions) => {
+      if (elementOfAllChampions.name == nameOfSortedChampion) {
+        sortedChampions.push(elementOfAllChampions);
+      }
+    });
+  }
+
+  return sortedChampions;
 }
 
-return sortedChampions
-
-
-}
-
+// Attack Filter Function : Low to High
 export function lowToHighAttackFunction(allChampions) {
-  let sortingChampionDataArray = []
-
+  let sortingChampionDataArray = [];
 
   allChampions.forEach((champion) => {
-  let currentChampionName = champion.name
-  let currentChampionAttack = champion.info.attack
-    
-    sortingChampionDataArray.push({
-      name: currentChampionName,   
-      attack : currentChampionAttack
-     })
+    let currentChampionName = champion.name;
+    let currentChampionAttack = champion.info.attack;
 
+    sortingChampionDataArray.push({
+      name: currentChampionName,
+      attack: currentChampionAttack,
+    });
   });
-  
-  let sortedArray = sortingChampionDataArray.sort(function(a, b) {
+
+  let sortedArray = sortingChampionDataArray.sort(function (a, b) {
     return parseFloat(a.attack) - parseFloat(b.attack);
   });
-  
- let sortedChampions = []
 
-for (let i = 0; i < sortedArray.length ; i++) {
-  const sortedElement = sortedArray[i]
-  let nameOfSortedChampion = sortedElement.name 
+  let sortedChampions = [];
 
-  allChampions.forEach(elementOfAllChampions => {
-     if ( elementOfAllChampions.name == nameOfSortedChampion ) {
-       sortedChampions.push(elementOfAllChampions)
-     } 
-  });
+  for (let i = 0; i < sortedArray.length; i++) {
+    const sortedElement = sortedArray[i];
+    let nameOfSortedChampion = sortedElement.name;
+
+    allChampions.forEach((elementOfAllChampions) => {
+      if (elementOfAllChampions.name == nameOfSortedChampion) {
+        sortedChampions.push(elementOfAllChampions);
+      }
+    });
+  }
+
+  return sortedChampions;
 }
 
-return sortedChampions
-
-
-}
-
+// Defense Filter Function : High to Low
 export function highToLowDefenseFunction(allChampions) {
-  let sortingChampionDataArray = []
-
+  let sortingChampionDataArray = [];
 
   allChampions.forEach((champion) => {
-  let currentChampionName = champion.name
-  let currentChampionAttack = champion.info.defense
-    
-    sortingChampionDataArray.push({
-      name: currentChampionName,   
-      defense : currentChampionAttack
-     })
+    let currentChampionName = champion.name;
+    let currentChampionAttack = champion.info.defense;
 
+    sortingChampionDataArray.push({
+      name: currentChampionName,
+      defense: currentChampionAttack,
+    });
   });
-  
-  let sortedArray = sortingChampionDataArray.sort(function(a, b) {
+
+  let sortedArray = sortingChampionDataArray.sort(function (a, b) {
     return parseFloat(b.defense) - parseFloat(a.defense);
   });
-  
- let sortedChampions = []
 
-for (let i = 0; i < sortedArray.length ; i++) {
-  const sortedElement = sortedArray[i]
-  let nameOfSortedChampion = sortedElement.name 
+  let sortedChampions = [];
 
-  allChampions.forEach(elementOfAllChampions => {
-     if ( elementOfAllChampions.name == nameOfSortedChampion ) {
-       sortedChampions.push(elementOfAllChampions)
-     } 
-  });
+  for (let i = 0; i < sortedArray.length; i++) {
+    const sortedElement = sortedArray[i];
+    let nameOfSortedChampion = sortedElement.name;
+
+    allChampions.forEach((elementOfAllChampions) => {
+      if (elementOfAllChampions.name == nameOfSortedChampion) {
+        sortedChampions.push(elementOfAllChampions);
+      }
+    });
+  }
+
+  return sortedChampions;
 }
-
-return sortedChampions
-
-
-}
-
+// Defense Filter Function : Low to High
 export function lowToHighDefenseFunction(allChampions) {
-  let sortingChampionDataArray = []
-
+  let sortingChampionDataArray = [];
 
   allChampions.forEach((champion) => {
-  let currentChampionName = champion.name
-  let currentChampionAttack = champion.info.defense
-    
-    sortingChampionDataArray.push({
-      name: currentChampionName,   
-      defense : currentChampionAttack
-     })
+    let currentChampionName = champion.name;
+    let currentChampionAttack = champion.info.defense;
 
+    sortingChampionDataArray.push({
+      name: currentChampionName,
+      defense: currentChampionAttack,
+    });
   });
-  
-  let sortedArray = sortingChampionDataArray.sort(function(a, b) {
+
+  let sortedArray = sortingChampionDataArray.sort(function (a, b) {
     return parseFloat(a.defense) - parseFloat(b.defense);
   });
-  
- let sortedChampions = []
 
-for (let i = 0; i < sortedArray.length ; i++) {
-  const sortedElement = sortedArray[i]
-  let nameOfSortedChampion = sortedElement.name 
+  let sortedChampions = [];
 
-  allChampions.forEach(elementOfAllChampions => {
-     if ( elementOfAllChampions.name == nameOfSortedChampion ) {
-       sortedChampions.push(elementOfAllChampions)
-     } 
-  });
-}
+  for (let i = 0; i < sortedArray.length; i++) {
+    const sortedElement = sortedArray[i];
+    let nameOfSortedChampion = sortedElement.name;
 
-return sortedChampions
+    allChampions.forEach((elementOfAllChampions) => {
+      if (elementOfAllChampions.name == nameOfSortedChampion) {
+        sortedChampions.push(elementOfAllChampions);
+      }
+    });
+  }
 
-
+  return sortedChampions;
 }
