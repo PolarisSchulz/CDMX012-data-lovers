@@ -9,149 +9,695 @@
   --color-gray-bar: #364044;
 }
 
-h1 {
-  font-size: 120px;
-  font-family: "Beaufort for LOL Bold";
-  color: var(--color-gold);
-  margin: 5px;
-  padding: 3px;
+/* iphone 12 pro */
+@media all and (min-width: 390px) {
+  h1 {
+    font-size: 11rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
+
+  h2 {
+    font-size: 4rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
+
+  p {
+    font-size: 2.7rem;
+    font-family: "Arial";
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  /*Selectores del header */
+  .headerLinks {
+    background-color: var(--color-black);
+    overflow: hidden;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  ul {
+    height: auto;
+    list-style-type: none;
+  }
+
+  /*Menu principal */
+  .mainMenu {
+    float: left;
+    margin-left: 2vh;
+    color: var(--color-gold);
+    align-items: baseline;
+    padding: 1vh;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .mainMenu:hover {
+    background-color: var(--color-gray);
+    border-radius: 10px;
+  }
+
+  /*Logo menu principal*/
+  .logoMainMenu {
+    float: left;
+    margin-left: 1vw;
+    text-decoration: none;
+  }
+
+  /*Boton play free */
+  .mainMenuHeaderBotton {
+    float: right;
+    margin-right: 2rem;
+    border: 3px solid;
+    padding: 1rem;
+    border-color: var(--color-gold);
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .mainMenuHeaderBotton:hover {
+    background-color: var(--color-gray);
+    border-radius: 10px;
+  }
+
+  /*Selectores del footer */
+  .footer {
+    background-color: var(--color-black);
+    padding-top: 6vw;
+    padding-bottom: 6vw;
+  }
+
+  .logoSocialNetworks {
+    margin: 3vw;
+  }
+
+  .socialNetworks {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .logoRiotGames {
+    display: flex;
+    justify-content: center;
+    margin-right: 5vw;
+    margin-left: 5vw;
+  }
+
+  .riotbarGameRatingRectangle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    user-select: none;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    height: 22vh;
+  }
+
+  .riotbarGameRatingBlock {
+    max-width: 100%;
+    padding: 0.5rem;
+    background: var(--color-gray);
+    border-radius: 8px;
+  }
+
+  .riotbarGameRating {
+    display: block;
+    background-color: transparent;
+    background-size: contain;
+    flex-shrink: 0;
+    max-width: 100%;
+  }
+
+  .riotbarGameRatingText {
+    display: inline-block;
+    text-align: left;
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 2rem;
+    line-height: 150%;
+    font-family: Arial, sans-serif;
+  }
+
+  .footerParagraph {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-family: "Arial";
+    color: var(--color-gray);
+    font-size: 1.5rem;
+    margin-top: 1vw;
+    padding-top: 1vw;
+    margin-bottom: 1vw;
+  }
+
+  /* Creditos de la pagina */
+  .footerCredits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: "Arial";
+    color: var(--color-gray);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-left: 4vh;
+    margin-right: 4vh;
+  }
+
+  .footerCreditsDecoration {
+    text-decoration: none;
+    color: var(--color-gold);
+    margin-left: 2vh;
+    margin-right: 2vh;
+  }
 }
 
-h2 {
-  font-size: 36px;
-  font-family: "Beaufort for LOL Bold";
-  color: var(--color-gold);
-  margin: 5px;
-  padding: 5px;
+/* macbook Air */
+@media all and (min-width: 834px) {
+  h1 {
+    font-size: 7rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
+
+  p {
+    font-size: 1.4rem;
+    font-family: "Arial";
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  /*Selectores del header */
+  .headerLinks {
+    background-color: var(--color-black);
+    overflow: hidden;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  ul {
+    height: auto;
+    list-style-type: none;
+  }
+
+  /*Menu principal */
+  .mainMenu {
+    float: left;
+    margin-left: 1.5vw;
+    color: var(--color-gold);
+    align-items: baseline;
+    padding: 0.2vw;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .mainMenu:hover {
+    background-color: var(--color-gray);
+    border-radius: 10px;
+  }
+
+  /*Logo menu principal*/
+  .logoMainMenu {
+    float: left;
+    margin-left: 0.5vw;
+    text-decoration: none;
+  }
+
+  /*Boton play free */
+  .mainMenuHeaderBotton {
+    float: right;
+    margin-right: 2vw;
+    border: 3px solid;
+    padding: 1vw;
+    border-color: var(--color-gold);
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .mainMenuHeaderBotton:hover {
+    background-color: var(--color-gray);
+    border-radius: 10px;
+  }
+
+  /*Selectores del footer */
+  .footer {
+    background-color: var(--color-black);
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
+
+  .logoSocialNetworks {
+    margin: 2vw;
+  }
+
+  .socialNetworks {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .logoRiotGames {
+    display: flex;
+    justify-content: center;
+    margin-right: 3vw;
+    margin-left: 3vw;
+  }
+
+  .riotbarGameRatingRectangle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    user-select: none;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .riotbarGameRatingBlock {
+    max-width: 100%;
+    padding: 8px 12px;
+    background: var(--color-gray);
+    border-radius: 8px;
+  }
+
+  .riotbarGameRating {
+    display: block;
+    background-color: transparent;
+    background-size: contain;
+    flex-shrink: 0;
+    max-width: 100%;
+  }
+
+  .riotbarGameRatingText {
+    display: inline-block;
+    text-align: left;
+    color: var(--color-white);
+    margin-left: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 150%;
+    font-family: Arial, sans-serif;
+  }
+
+  .footerParagraph {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-family: "Arial";
+    color: var(--color-gray);
+    font-size: 1rem;
+    padding-top: 1vw;
+  }
+
+  .footerCredits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: "Arial";
+    color: var(--color-gray);
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+
+  .footerCreditsDecoration {
+    text-decoration: none;
+    color: var(--color-gold);
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }
 
-h3 {
-  font-size: 24px;
-  font-family: "Beaufort for LOL Bold";
-  color: var(--color-gold);
+/* macbook Air */
+@media all and (min-width: 1280px) {
+  h1 {
+    font-size: 8rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
+
+  p {
+    font-size: 1.3rem;
+    font-family: "Arial";
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  /*Selectores del header */
+  .headerLinks {
+    background-color: var(--color-black);
+    overflow: hidden;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  ul {
+    height: auto;
+    list-style-type: none;
+  }
+
+  /*Menu principal */
+  .mainMenu {
+    float: left;
+    margin-left: 2vw;
+    color: var(--color-gold);
+    align-items: baseline;
+    padding: 1vw;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .mainMenu:hover {
+    background-color: var(--color-gray);
+    border-radius: 10px;
+  }
+
+  /*Logo menu principal*/
+  .logoMainMenu {
+    float: left;
+    margin-left: 1vw;
+    text-decoration: none;
+  }
+
+  /*Boton play free */
+  .mainMenuHeaderBotton {
+    float: right;
+    margin-right: 2vw;
+    border: 3px solid;
+    padding: 1vw;
+    border-color: var(--color-gold);
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .mainMenuHeaderBotton:hover {
+    background-color: var(--color-gray);
+    border-radius: 10px;
+  }
+
+  /*Selectores del footer */
+  .footer {
+    background-color: var(--color-black);
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
+
+  .logoSocialNetworks {
+    margin: 2vw;
+  }
+
+  .socialNetworks {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .logoRiotGames {
+    display: flex;
+    justify-content: center;
+    margin-right: 3vw;
+    margin-left: 3vw;
+  }
+
+  .riotbarGameRatingRectangle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    user-select: none;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .riotbarGameRatingBlock {
+    max-width: 100%;
+    padding: 8px 12px;
+    background: var(--color-gray);
+    border-radius: 8px;
+  }
+
+  .riotbarGameRating {
+    display: block;
+    background-color: transparent;
+    background-size: contain;
+    flex-shrink: 0;
+    max-width: 100%;
+  }
+
+  .riotbarGameRatingText {
+    display: inline-block;
+    text-align: left;
+    color: var(--color-white);
+    margin-left: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 150%;
+    font-family: Arial, sans-serif;
+  }
+
+  .footerParagraph {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-family: "Arial";
+    color: var(--color-gray);
+    font-size: 1rem;
+    padding-top: 1vw;
+  }
+
+  .footerCredits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: "Arial";
+    color: var(--color-gray);
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+
+  .footerCreditsDecoration {
+    text-decoration: none;
+    color: var(--color-gold);
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }
 
-p {
-  font-size: 21px;
-  font-family: "Arial";
-  color: var(--color-white);
-  text-align: center;
-  margin: 5px;
-  padding: 20px;
-}
+/* macbook Air */
+@media all and (min-width: 2056px) {
+  h1 {
+    font-size: 8rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
 
-/*Selectores del header */
-.headerLinks {
-  background-color: var(--color-black);
-  overflow: hidden;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
+  h2 {
+    font-size: 3rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
 
-ul {
-  height: auto;
-  list-style-type: none;
-}
+  h3 {
+    font-size: 2rem;
+    font-family: "Beaufort for LOL Bold";
+    color: var(--color-gold);
+  }
 
-/*Menu principal */
-.mainMenu {
-  float: left;
-  margin-left: 2rem;
-  color: var(--color-gold);
-  align-items: baseline;
-  padding: 1rem;
-  text-align: center;
-  text-decoration: none;
-}
+  p {
+    font-size: 1.7rem;
+    font-family: "Arial";
+    color: var(--color-white);
+    text-align: center;
+  }
 
-.mainMenu:hover {
-  background-color: var(--color-gray);
-  border-radius: 10px;
-}
+  /*Selectores del header */
+  .headerLinks {
+    background-color: var(--color-black);
+    overflow: hidden;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
 
-/*Logo menu principal*/
-.logoMainMenu {
-  float: left;
-  margin-left: 2rem;
-  text-decoration: none;
-}
+  ul {
+    height: auto;
+    list-style-type: none;
+  }
 
-/*Boton play free */
-.mainMenuHeaderBotton {
-  float: right;
-  margin-right: 2rem;
-  border: 3px solid;
-  padding: 1rem;
-  border-color: var(--color-gold);
-  border-radius: 10px;
-  text-decoration: none;
-}
+  /*Menu principal */
+  .mainMenu {
+    float: left;
+    margin-left: 2vw;
+    color: var(--color-gold);
+    /* align-items: baseline; */
+    padding: 1vw;
+    text-align: center;
+    text-decoration: none;
+  }
 
-.mainMenuHeaderBotton:hover {
-  background-color: var(--color-gray);
-  border-radius: 10px;
-}
+  .mainMenu:hover {
+    background-color: var(--color-gray);
+    border-radius: 10px;
+  }
 
-/*Selectores del footer */
-.footer {
-  background-color: var(--color-black);
-  padding-top: 9rem;
-  padding-bottom: 9rem;
-}
+  /*Logo menu principal*/
+  .logoMainMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin-left: 2vw;
+    text-decoration: none;
+  }
 
-.social-networks {
-  color: aliceblue;
-}
+  /*Boton play free */
+  .mainMenuHeaderBotton {
+    float: right;
+    margin-right: 2vw;
+    border: 3px solid;
+    padding: 1vw;
+    border-color: var(--color-gold);
+    border-radius: 10px;
+    text-decoration: none;
+  }
 
-.riotbar-game-rating-rectangle {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  user-select: none;
-  box-sizing: border-box;
-  font-weight: 500;
-  justify-content: center;
-  align-items: center;
-}
+  .mainMenuHeaderBotton:hover {
+    background-color: var(--color-gray);
+    border-radius: 10px;
+  }
 
-.riotbar-game-rating-block {
-  max-width: 100%;
-  padding: 8px 12px;
-  background: var(--color-gray);
-  border-radius: 8px;
-}
+  /*Selectores del footer */
+  .footer {
+    background-color: var(--color-black);
+    /* padding-top: 1vw; */
+    padding-bottom: 2vw;
+  }
 
-.riotbar-game-rating {
-  display: block;
-  background-color: transparent;
-  background-size: contain;
-  flex-shrink: 0;
-  max-width: 100%;
-}
+  .logoSocialNetworks {
+    margin: 1.2vw;
+    /* padding: 1rem; */
+  }
 
-.riotbar-game-rating-text {
-  display: inline-block;
-  text-align: left;
-  color: var(--color-white);
-  margin-left: 12px;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 150%;
-  font-family: Arial, sans-serif;
-}
+  .socialNetworks {
+    display: flex;
+    flex-wrap: wrap;
+    /* box-sizing: border-box; */
+    justify-content: center;
+  }
 
-.footer-paragraph {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  text-align: center;
-  font-weight: bolder;
-  font-family: "Arial";
-  color: var(--color-gray);
-  font-size: 14px;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  margin-bottom: 1rem;
-}
+  .logoRiotGames {
+    display: flex;
+    justify-content: center;
+    margin-right: 3vw;
+    margin-left: 3vw;
+  }
 
+  .riotbarGameRatingRectangle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    user-select: none;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .riotbarGameRatingBlock {
+    max-width: 100%;
+    padding: 8px 12px;
+    background: var(--color-gray);
+    border-radius: 8px;
+  }
+
+  .riotbarGameRating {
+    display: block;
+    background-color: transparent;
+    background-size: contain;
+    flex-shrink: 0;
+    max-width: 100%;
+  }
+
+  .riotbarGameRatingText {
+    display: inline-block;
+    text-align: left;
+    color: var(--color-white);
+    margin-left: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 150%;
+    font-family: Arial, sans-serif;
+  }
+
+  .footerParagraph {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    /* font-weight: bolder; */
+    font-family: "Arial";
+    color: var(--color-gray);
+    font-size: 1rem;
+    /* padding-top: 1vw; */
+  }
+
+  .footerCredits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: "Arial";
+    color: var(--color-gray);
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+
+  .footerCreditsDecoration {
+    text-decoration: none;
+    color: var(--color-gold);
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+  }
+}
