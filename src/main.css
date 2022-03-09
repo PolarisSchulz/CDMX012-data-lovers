@@ -226,8 +226,7 @@ td {
     filter: drop-shadow(8px 8px 16px #111111);
   }
 }
-
-/* ipad pro 11 */
+/* macbook Air */
 @media all and (min-width: 834px) {
   /*Selectores del container */
   .container {
@@ -253,8 +252,8 @@ td {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    padding-top: 30rem;
-    padding-bottom: 30rem;
+    padding-top: 20rem;
+    padding-bottom: 15rem;
     background: linear-gradient(
       180deg,
       rgba(20, 24, 27, 0) 0%,
@@ -273,9 +272,8 @@ td {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 1rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 6rem;
+    padding-bottom: 1rem;
     background: rgb(20, 24, 27);
     background: linear-gradient(
       0deg,
@@ -286,32 +284,33 @@ td {
 
   /*Selectores del filtro de seleccion de campeones*/
 
-  /*Barra de navegación*/
-
+  /*Barra de navegación de filtros*/
   .filter-options {
     display: flex;
-    align-items: baseline;
-    text-align: center;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 1rem;
+    align-items: baseline;
+    height: 10vh;
     background: linear-gradient(
       270deg,
       rgba(20, 24, 27, 0) 0%,
       rgba(20, 24, 27, 1) 100%
     );
   }
-
+  /* Buscador de campeones por nombre */
   .search-bar {
     font-family: "Beaufort for LOL Bold";
-    font-size: 22px;
-    color: #c28f2c;
+    font-size: 1.2rem;
     text-align: center;
-    padding: 0.3rem 0.5rem;
+    justify-content: center;
+    padding: 0.1rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     outline: none;
-    background-color: var(--color-gray-bar);
     margin-right: 1rem;
+    margin-left: 1rem;
+    color: var(--color-gold);
+    background-color: var(--color-gray-bar);
   }
 
   .search-bar:hover {
@@ -319,14 +318,15 @@ td {
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
 
+  /* Área en general de filtro de campeones*/
   .champClass {
-    text-align: center;
     text-decoration: none;
-    padding: 14px 16px;
-    border: none;
-    font-size: 24px;
     font-family: "Beaufort for LOL Bold";
+    font-size: 1.2rem;
+    text-align: center;
     color: var(--color-gold);
+    border: none;
+    padding: 1rem;
   }
 
   .champClass:hover {
@@ -334,10 +334,12 @@ td {
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
 
+  /* Botones de campeones  all, assassins, fighters, mages, marksmen, supports, tanks*/
   .champClass_button {
+    justify-content: center;
     background-color: rgba(17, 17, 17, 0);
     border: none;
-    font-size: 24px;
+    font-size: 1.2rem;
     font-family: "Beaufort for LOL Bold";
     color: var(--color-gold);
   }
@@ -346,48 +348,34 @@ td {
     color: var(--color-white);
   }
 
+  /* Botones de campeones  difficulty y stats*/
   .champFilters {
-    float: right;
+    float: center;
     text-decoration: none;
     display: inline;
-    padding: 14px 16px;
+    padding: 0.1rem;
   }
 
+  /* Botones de campeones  difficulty y stats*/
   .dropbtn {
-    background-color: rgba(17, 17, 17, 0);
     border: none;
-    font-size: 24px;
+    cursor: pointer;
+    font-size: 1.2rem;
     font-family: "Beaufort for LOL Bold";
     color: var(--color-gold);
+    background-color: rgba(17, 17, 17, 0);
   }
 
-  /*Selectores del flex container*/
-  .flex-container {
-    background-color: var(--color-black);
-  }
-
-  /* Tamaño de imágenes en mosaico */
-  .champion-image {
-    height: 220px;
-  }
-
-  /* Flex aplicado a mosaico */
-  .champion-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  .dropbtn {
-    padding: 16px;
-    cursor: pointer;
-  }
-
+  /* Botones de campeones  difficulty y stats, desplegable al dar clic*/
   .dropdown {
     position: relative;
     display: inline-block;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .dropdown:hover .dropdownContent {
+    display: block;
   }
 
   .dropdownContent {
@@ -410,11 +398,24 @@ td {
   .dropdownContent a:hover {
     background-color: #f1f1f1;
   }
-  .dropdown:hover .dropdownContent {
-    display: block;
+
+  /* Flex aplicado a mosaico */
+  .champion-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
   }
-  /* Este hover cambia el color de el boton del menu cuando se esta haciendo hover en el */
-  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+  /* Tamaño de imágenes en mosaico */
+  .champion-image {
+    height: 13vw;
+    padding: 0.5rem;
+    border-top-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    filter: drop-shadow(8px 8px 16px #111111);
+  }
 }
 
 /* macbook Air */
