@@ -184,12 +184,24 @@ function populateChampion(currentChampion) {
   let splash = currentChampion.splash;
   let blurb = currentChampion.blurb;
 
+  let tags = currentChampion.tags;
+  let difficulty = currentChampion.info.difficulty;
+  let attack = currentChampion.info.attack;
+  let defense = currentChampion.info.defense;
+  let magic = currentChampion.info.magic;
+
   document.getElementById("champion-title").innerHTML = title;
   document.getElementById(
     "champion-face"
   ).style.backgroundImage = `url('${splash}')`;
   document.getElementById("champion-name").innerHTML = name;
   document.getElementById("champion-blurb").innerHTML = blurb;
+
+  document.getElementById("champion-tags").innerHTML = tags;
+  document.getElementById("champion-difficulty").innerHTML = difficulty;
+  document.getElementById("champion-attack").innerHTML = attack;
+  document.getElementById("champion-defense").innerHTML = defense;
+  document.getElementById("champion-magic").innerHTML = magic;
 }
 
 const mainMenuButton = document.getElementById("mainMenuButton");
@@ -202,4 +214,3 @@ mainMenuButton.addEventListener("click", () => {
 buildCards(championData);
 
 setOnClickEvents();
-
