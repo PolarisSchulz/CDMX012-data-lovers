@@ -16,7 +16,7 @@
     <div class="headerLinks">
       <!--Logo League of Legends -->
       <ul>
-        <li><a href="" class="logoMainMenu">
+        <li><a class="logoMainMenu">
             <img src="https://logodownload.org/wp-content/uploads/2014/09/lol-league-of-Legends-logo.png"
               alt="League of Legens" width="148"></a></li>
 
@@ -28,8 +28,7 @@
         <li><a href="#choose-your-champion" class="mainMenu">
             <h3>CHAMPIONS</h3>
           </a></li>
-        <li><a href="https://www.leagueoflegends.com/en-us/news/" class="mainMenu" target="_blank"
-            rel="noopener noreferrer">
+        <li><a href="https://www.leagueoflegends.com/en-us/news/" class="mainMenu" target="_blank">
             <h3>NEWS</h3>
           </a></li>
         <li><a href="https://universe.leagueoflegends.com/en_US/" class="mainMenu" target="_blank"
@@ -146,30 +145,46 @@
     </nav>
 
     <!--Aquí van a ir los campeoncitos y todo lo del carrusel acá bien guapo-->
-    <div class="champion-cards  display-on "  id="champion-cards">
+    <div class="champion-cards  display-on " id="champion-cards">
 
     </div>
 
     <!-- aca van los campeones individuales  -->
     <div class="champion-container display-off" id="champion-container">
-        <div class="champion">
-         <div class="champion-face" id="champion-face">
-           <button id ="mainMenuButton"> regresar </button>
-            <h3 id="champion-title"></h3>
-            <h1 id="champion-name" ></h1>
-            
-            <p id="champion-blurb"></p>
-            
-            <h4>marksman</h4>
-            <h4>Difficulty</h4>
-         </div>
-         <div class="champion-stats">
-           <p>attack</p>
-           <p>defense</p>
-           <p>magic</p>
-           <p>dificulty</p>
-         </div>
+      <div class="champion">
+        <div class="champion-face" id="champion-face">
+          <button id="mainMenuButton"> regresar </button>
+          <h3 id="champion-title"></h3>
+          <h1 id="champion-name"></h1>
+
+          <p id="champion-blurb"></p>
+
+          <h4 id="champion-tags"></h4>
+          <h4>Difficulty:
+            <p id="champion-difficulty" class="infoParagraph"></p>
+          </h4>
         </div>
+        <div class="champion-stats">
+          <p>attack:
+          <p id="champion-attack"></p>
+          </p>
+          <p>defense:
+          <p id="champion-defense"></p>
+          </p>
+          <p>magic:
+          <p id="champion-magic"></p>
+          </p>
+
+          <h4>marksman</h4>
+          <h4>Difficulty</h4>
+        </div>
+        <div class="champion-stats">
+          <p>attack</p>
+          <p>defense</p>
+          <p>magic</p>
+          <p>dificulty</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -179,19 +194,48 @@
   </div>
 
   <div>
-    <footer class="footer">
+    <div class="footer">
 
-      <div class="social-networks">
-        Acá faltan los logos centrados y de color gris, no olvidar, segundo aviso xd
+      <div class="socialNetworks">
+        <div class="logoSocialNetworks">
+          <a href="https://www.youtube.com/user/riotgamesinc" target="_blank" rel="noopener noreferrer">
+            <img src="/img/youtube.png" width="40" alt="Logotipo youtube" />
+          </a>
+        </div>
+        <div class="logoSocialNetworks">
+          <a href="https://twitter.com/leagueoflegends" target="_blank" rel="noopener noreferrer">
+            <img src="/img/twitter.png" width="40" alt="Logotipo twitter" />
+          </a>
+        </div>
+        <div class="logoSocialNetworks">
+          <a href="https://www.facebook.com/leagueoflegends" target="_blank" rel="noopener noreferrer">
+            <img src="/img/facebook.png" width="40" alt="Logotipo facebook" />
+          </a>
+        </div>
+        <div class="logoSocialNetworks">
+          <a href="https://www.instagram.com/leagueoflegends/" target="_blank" rel="noopener noreferrer">
+            <img src="/img/instagram.png" width="40" alt="Logotipo instagram" />
+          </a>
+        </div>
+        <div class="logoSocialNetworks">
+          <a href="https://www.reddit.com/r/leagueoflegends/" target="_blank" rel="noopener noreferrer">
+            <img src="/img/reddit.png" width="40" alt="Logotipo reddit" />
+          </a>
+        </div>
       </div>
 
-      <div class="riotbar-game-rating-rectangle">
-        <div class="riotbar-game-rating-block">
-          <div class="riotbar-game-rating">
+      <div class="riotbarGameRatingRectangle">
+        <div class="logoRiotGames">
+          <a href="https://www.riotgames.com/es-419" target="_blank">
+            <img src="/img/Riot_Games_wordmark.png" width="100" alt="Logotipo Riot Games" />
+          </a>
+        </div>
+        <div class="riotbarGameRatingBlock">
+          <div class="riotbarGameRating">
             <img
               src="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt873108b7788eccd8/5e4ce144f2815f2507d7571b/na-esrb.png?height=100disable=upscale">
 
-            <div class="riotbar-game-rating-text">
+            <div class="riotbarGameRatingText">
               Blood<br>
               Fantasy Violence<br>
               Mild Suggestive Themes<br>
@@ -202,15 +246,21 @@
         </div>
       </div>
 
-      <div class="footer-paragraph">
+      <div class="footerParagraph">
         ™ & © 2022 Riot Games, Inc. League of Legends and all related logos, characters, names and distinctive
-        likenesses thereof are exclusive property of Riot Games, Inc.
-        All Rights Reserved.<br>
-        Site created by Orome and Polaris
+        likenesses there of are exclusive property of Riot Games, Inc.
+        All Rights Reserved.
+      </div>
+      <div class="footerCredits">
+        Site created by <a class=" footerCreditsDecoration" href="https://github.com/OromeSenryu" target="_blank"
+          rel="noopener noreferrer"> Orome Senryu
+        </a> and <a class=" footerCreditsDecoration" href="https://github.com/PolarisSchulz" target="_blank"
+          rel="noopener noreferrer">
+          Polaris Schulz</a>
       </div>
 
-    </footer>
-  </div>
+      </footer>
+    </div>
 
 </body>
 
