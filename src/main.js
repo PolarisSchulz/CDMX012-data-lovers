@@ -1,805 +1,216 @@
-/* css normalization  */
+//import { example } from "./data.js";
+import lolData from "./data/lol/lol.js";
+import {
+  filterFunction,
+  lowDifficultyFunction,
+  midDifficultyFunction,
+  highDifficultyFunction,
+  highToLowAttackFunction,
+  lowToHighAttackFunction,
+  highToLowDefenseFunction,
+  lowToHighDefenseFunction,
+} from "./data.js";
 
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-form,
-fieldset,
-input,
-textarea,
-p,
-blockquote,
-th,
-td {
-  margin: 0;
-  padding: 0;
+//------------ Definición de variables, chí cheñol ------------//
+
+// Variables para mostrar campeones //
+let championData = lolData.data;
+let championCards = document.getElementById("champion-cards");
+let championContainer = document.getElementById("champion-container");
+
+// Variables para filtros //
+const filter_all = document.getElementById("filter_all");
+
+//------------ Función para mosaico de campeones ------------//
+function buildCards(champions) {
+  championCards.innerHTML = "";
+  let output = "";
+  //function buildCarrousel() {
+  //Integrar función para carrousel de tarjetas de campeón }
+
+  for (let champion in champions) {
+    // eslint-disable-next-line no-prototype-builtins
+    if (champions.hasOwnProperty(champion)) {
+      let championObjectData = champions[champion];
+      //console.log(championObjectData);
+      // let {
+      //   blurb,
+      //   id,
+      //   image,
+      //   img,
+      //   info,
+      //   key,
+      //   name,
+      //   partype,
+      //   splash,
+      //   stats,
+      //   tags,
+      //   title,
+      //   version,
+      // } = championObjectData;
+
+      let id = championObjectData.id;
+      let splash = championObjectData.splash;
+
+      output += `
+            <div class="${id}-class  champion-card"} >
+                <img  class="champion-image"  id= ${id}  src="${splash}" alt="${id}" ">
+            </div>
+            `;
+    }
+  }
+
+  championCards.innerHTML += output;
 }
 
-:root {
-  --color-gold: #c28f2c;
-  --color-white: aliceblue;
-  --color-gray: #444444;
-  --color-black: #111111;
-  --color-gray-bar: #364044;
+//------------ Función para filtros por clase de campeón ------------//
+
+document.querySelectorAll(".champClass_button").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    let championDataArray = Object.values(championData);
+    let finalClassArray = filterFunction(championDataArray, event.target.value);
+    buildCards(finalClassArray);
+  });
+});
+
+filter_all.addEventListener("click", () => {
+  buildCards(championData);
+});
+
+//------------ Función para filtros por dificultad ------------//
+const lowDifficulty = document.querySelector(".lowDifficulty");
+const moderateDifficulty = document.querySelector(".moderateDifficulty");
+const highDifficulty = document.querySelector(".highDifficulty");
+
+// Low Difficulty //
+lowDifficulty.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalLowDiffArray = lowDifficultyFunction(championDataArray);
+  buildCards(finalLowDiffArray);
+});
+
+// Moderate Difficulty //
+moderateDifficulty.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalMidDiffArray = midDifficultyFunction(championDataArray);
+  buildCards(finalMidDiffArray);
+});
+
+// High Difficulty //
+highDifficulty.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalHighDiffArray = highDifficultyFunction(championDataArray);
+  buildCards(finalHighDiffArray);
+});
+
+//------------ Función para filtros por ataque/defensa ------------//
+const highestAttack = document.querySelector(".highestAttack");
+const lowestAttack = document.querySelector(".lowestAttack");
+const highestDefense = document.querySelector(".highestDefense");
+const lowestDefense = document.querySelector(".lowestDefense");
+
+// abajo de esto hay que refactorizar, esto no se queda asi de cochino
+
+highestAttack.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalHighAtkArray = highToLowAttackFunction(championDataArray);
+  buildCards(finalHighAtkArray);
+});
+lowestAttack.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalLowAtkArray = lowToHighAttackFunction(championDataArray);
+  buildCards(finalLowAtkArray);
+});
+highestDefense.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalHighDefArray = highToLowDefenseFunction(championDataArray);
+  buildCards(finalHighDefArray);
+});
+lowestDefense.addEventListener("click", () => {
+  let championDataArray = Object.values(championData);
+  let finalLowDefArray = lowToHighDefenseFunction(championDataArray);
+  buildCards(finalLowDefArray);
+});
+
+//------------ Función para segunda vista (goToChampion) ------------//
+//function goToChampion(id) {
+// obtener el dato id para poder obtener el objeto de ese campeon a partir de champion data
+// mandarnos a champion.html
+// llenar champion.html con los datos que obtuvimos del campeón
+// }
+
+// declaracion de funcion, no puedo ejecutar algo que no esta declarado
+function clickFunction(e) {
+  let champion = e.target.id;
+  buildChampion(champion);
+  // console.log("click on champion", champion)
 }
 
-/* iphone 12 pro */
-@media all and (min-width: 390px) {
-  /*Selectores del container */
-  .container {
-    background: rgb(20, 24, 27);
-    background: linear-gradient(
-      90deg,
-      rgba(20, 24, 27, 1) 0%,
-      rgba(82, 91, 97, 1) 100%
-    );
-  }
-
-  /*Selectores del main section*/
-
-  .mainSection {
-    position: relative;
-    background-size: cover;
-    background-image: url("https://empolgouesportshome.files.wordpress.com/2020/08/orig_494006.jpg");
-    text-align: center;
-  }
-
-  .mainSectionMarginOpacity {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-top: 65vh;
-    padding-bottom: 65vh;
-    background: linear-gradient(
-      180deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-
-  /*Selectores de la seleccion del campeon*/
-
-  .choose-your-champion {
-    align-items: center;
-  }
-
-  .chooseYourChampionMargin {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-top: 20vh;
-    padding-bottom: 10vh;
-    background: rgb(20, 24, 27);
-    background: linear-gradient(
-      0deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-
-  /*Selectores del filtro de seleccion de campeones*/
-
-  /*Barra de navegación de filtros*/
-  .filter-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    height: 35vh;
-    background: linear-gradient(
-      270deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-  /* Buscador de campeones por nombre */
-  .search-bar {
-    font-family: "Beaufort for LOL Bold";
-    font-size: 2.7rem;
-    text-align: center;
-    justify-content: center;
-    padding: 0.7rem;
-    border: none;
-    border-radius: 0.5rem;
-    outline: none;
-    margin-right: 15rem;
-    margin-left: 15rem;
-    color: var(--color-gold);
-    background-color: var(--color-gray-bar);
-  }
-
-  .search-bar:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  /* Área en general de filtro de campeones*/
-  .champClass {
-    text-decoration: none;
-    font-family: "Beaufort for LOL Bold";
-    font-size: 2.7rem;
-    text-align: center;
-    color: var(--color-gold);
-    border: none;
-    padding: 1rem;
-  }
-
-  .champClass:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  /* Botones de campeones  all, assassins, fighters, mages, marksmen, supports, tanks*/
-  .champClass_button {
-    justify-content: center;
-    background-color: rgba(17, 17, 17, 0);
-    border: none;
-    font-size: 2.7rem;
-    font-family: "Beaufort for LOL Bold";
-    color: var(--color-gold);
-  }
-
-  .champClass_button:focus {
-    color: var(--color-white);
-  }
-
-  /* Botones de campeones  difficulty y stats*/
-  .champFilters {
-    float: center;
-    text-decoration: none;
-    display: inline;
-    padding: 14px 16px;
-  }
-
-  /* Botones de campeones  difficulty y stats*/
-  .dropbtn {
-    border: none;
-    cursor: pointer;
-    font-size: 2.7rem;
-    font-family: "Beaufort for LOL Bold";
-    color: var(--color-gold);
-    background-color: rgba(17, 17, 17, 0);
-  }
-
-  /* Botones de campeones  difficulty y stats, desplegable al dar clic*/
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    font-size: 2.4rem;
-    padding: 1rem;
-  }
-
-  .dropdown:hover .dropdownContent {
-    display: block;
-  }
-
-  .dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: #525b61;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  .dropdownContent a {
-    color: var(--color-gold);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: "Beaufort for LOL Bold";
-  }
-
-  .dropdownContent a:hover {
-    background-color: #f1f1f1;
-  }
-
-  /* Flex aplicado a mosaico */
-  .champion-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  /* Tamaño de imágenes en mosaico */
-  .champion-image {
-    height: 135vw;
-    padding: 0.5rem;
-    border-top-left-radius: 4rem;
-    border-bottom-right-radius: 4rem;
-    filter: drop-shadow(8px 8px 16px #111111);
-  }
-}
-/* macbook Air */
-@media all and (min-width: 834px) {
-  /*Selectores del container */
-  .container {
-    background: rgb(20, 24, 27);
-    background: linear-gradient(
-      90deg,
-      rgba(20, 24, 27, 1) 0%,
-      rgba(82, 91, 97, 1) 100%
-    );
-  }
-
-  /*Selectores del main section*/
-
-  .mainSection {
-    position: relative;
-    background-size: cover;
-    background-image: url("https://empolgouesportshome.files.wordpress.com/2020/08/orig_494006.jpg");
-    text-align: center;
-  }
-
-  .mainSectionMarginOpacity {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-top: 20rem;
-    padding-bottom: 15rem;
-    background: linear-gradient(
-      180deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-
-  /*Selectores de la seleccion del campeon*/
-
-  .choose-your-champion {
-    align-items: center;
-  }
-
-  .chooseYourChampionMargin {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-top: 6rem;
-    padding-bottom: 1rem;
-    background: rgb(20, 24, 27);
-    background: linear-gradient(
-      0deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-
-  /*Selectores del filtro de seleccion de campeones*/
-
-  /*Barra de navegación de filtros*/
-  .filter-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    height: 10vh;
-    background: linear-gradient(
-      270deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-  /* Buscador de campeones por nombre */
-  .search-bar {
-    font-family: "Beaufort for LOL Bold";
-    font-size: 1.2rem;
-    text-align: center;
-    justify-content: center;
-    padding: 0.1rem;
-    border: none;
-    border-radius: 0.5rem;
-    outline: none;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    color: var(--color-gold);
-    background-color: var(--color-gray-bar);
-  }
-
-  .search-bar:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  /* Área en general de filtro de campeones*/
-  .champClass {
-    text-decoration: none;
-    font-family: "Beaufort for LOL Bold";
-    font-size: 1.2rem;
-    text-align: center;
-    color: var(--color-gold);
-    border: none;
-    padding: 1rem;
-  }
-
-  .champClass:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  /* Botones de campeones  all, assassins, fighters, mages, marksmen, supports, tanks*/
-  .champClass_button {
-    justify-content: center;
-    background-color: rgba(17, 17, 17, 0);
-    border: none;
-    font-size: 1.2rem;
-    font-family: "Beaufort for LOL Bold";
-    color: var(--color-gold);
-  }
-
-  .champClass_button:focus {
-    color: var(--color-white);
-  }
-
-  /* Botones de campeones  difficulty y stats*/
-  .champFilters {
-    float: center;
-    text-decoration: none;
-    display: inline;
-    padding: 0.1rem;
-  }
-
-  /* Botones de campeones  difficulty y stats*/
-  .dropbtn {
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-family: "Beaufort for LOL Bold";
-    color: var(--color-gold);
-    background-color: rgba(17, 17, 17, 0);
-  }
-
-  /* Botones de campeones  difficulty y stats, desplegable al dar clic*/
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    font-size: 1.2rem;
-    padding: 1rem;
-  }
-
-  .dropdown:hover .dropdownContent {
-    display: block;
-  }
-
-  .dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: #525b61;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  .dropdownContent a {
-    color: var(--color-gold);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: "Beaufort for LOL Bold";
-  }
-
-  .dropdownContent a:hover {
-    background-color: #f1f1f1;
-  }
-
-  /* Flex aplicado a mosaico */
-  .champion-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  /* Tamaño de imágenes en mosaico */
-  .champion-image {
-    height: 13vw;
-    padding: 0.5rem;
-    border-top-left-radius: 4rem;
-    border-bottom-right-radius: 4rem;
-    filter: drop-shadow(8px 8px 16px #111111);
+function setOnClickEvents() {
+  let cards = document.getElementsByClassName("champion-card");
+  // console.log("estas son las cards ", cards)
+  for (const card of cards) {
+    card.addEventListener("click", clickFunction);
   }
 }
 
-/* macbook Air */
-@media all and (min-width: 1280px) {
-  /*Selectores del container */
-  .container {
-    background: rgb(20, 24, 27);
-    background: linear-gradient(
-      90deg,
-      rgba(20, 24, 27, 1) 0%,
-      rgba(82, 91, 97, 1) 100%
-    );
-  }
+function buildChampion(champion) {
+  // champion = el string del nombre del campeon seleccionado
+  let currentChampion = championData[champion];
+  // champion
+  // console.log(currentChampion);
+  // hide cards
+  hideElement(championCards);
+  // show card
+  showElement(championContainer);
 
-  /*Selectores del main section*/
-
-  .mainSection {
-    position: relative;
-    background-size: cover;
-    background-image: url("https://empolgouesportshome.files.wordpress.com/2020/08/orig_494006.jpg");
-    text-align: center;
-  }
-
-  .mainSectionMarginOpacity {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-top: 13rem;
-    padding-bottom: 16rem;
-    background: linear-gradient(
-      180deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-
-  /*Selectores de la seleccion del campeon*/
-
-  .choose-your-champion {
-    align-items: center;
-  }
-
-  .chooseYourChampionMargin {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 1rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background: rgb(20, 24, 27);
-    background: linear-gradient(
-      0deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-
-  /*Selectores del filtro de seleccion de campeones*/
-
-  /*Barra de navegación de filtros*/
-  .filter-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    height: 10vh;
-    background: linear-gradient(
-      270deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-  /* Buscador de campeones por nombre */
-  .search-bar {
-    font-family: "Beaufort for LOL Bold";
-    font-size: 1.2rem;
-    text-align: center;
-    justify-content: center;
-    padding: 0.1rem;
-    border: none;
-    border-radius: 0.5rem;
-    outline: none;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    color: var(--color-gold);
-    background-color: var(--color-gray-bar);
-  }
-
-  .search-bar:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  /* Área en general de filtro de campeones*/
-  .champClass {
-    text-decoration: none;
-    font-family: "Beaufort for LOL Bold";
-    font-size: 1.2rem;
-    text-align: center;
-    color: var(--color-gold);
-    border: none;
-    padding: 1rem;
-  }
-
-  .champClass:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  /* Botones de campeones  all, assassins, fighters, mages, marksmen, supports, tanks*/
-  .champClass_button {
-    justify-content: center;
-    background-color: rgba(17, 17, 17, 0);
-    border: none;
-    font-size: 1.2rem;
-    font-family: "Beaufort for LOL Bold";
-    color: var(--color-gold);
-  }
-
-  .champClass_button:focus {
-    color: var(--color-white);
-  }
-
-  /* Botones de campeones  difficulty y stats*/
-  .champFilters {
-    float: center;
-    text-decoration: none;
-    display: inline;
-    padding: 0.1rem;
-  }
-
-  /* Botones de campeones  difficulty y stats*/
-  .dropbtn {
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-family: "Beaufort for LOL Bold";
-    color: var(--color-gold);
-    background-color: rgba(17, 17, 17, 0);
-  }
-
-  /* Botones de campeones  difficulty y stats, desplegable al dar clic*/
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    font-size: 1.2rem;
-    padding: 1rem;
-  }
-
-  .dropdown:hover .dropdownContent {
-    display: block;
-  }
-
-  .dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: #525b61;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  .dropdownContent a {
-    color: var(--color-gold);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: "Beaufort for LOL Bold";
-  }
-
-  .dropdownContent a:hover {
-    background-color: #f1f1f1;
-  }
-
-  /* Flex aplicado a mosaico */
-  .champion-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  /* Tamaño de imágenes en mosaico */
-  .champion-image {
-    height: 12vw;
-    padding: 0.5rem;
-    border-top-left-radius: 4rem;
-    border-bottom-right-radius: 4rem;
-    filter: drop-shadow(8px 8px 16px #111111);
-  }
+  // populate champion container with currentChampion info
+  populateChampion(currentChampion);
 }
 
-/* macbook Air */
-@media all and (min-width: 2056px) {
-  /*Selectores del container */
-  .container {
-    background: rgb(20, 24, 27);
-    background: linear-gradient(
-      90deg,
-      rgba(20, 24, 27, 1) 0%,
-      rgba(82, 91, 97, 1) 100%
-    );
-  }
-
-  /*Selectores del main section*/
-
-  .mainSection {
-    position: relative;
-    background-size: cover;
-    background-image: url("https://empolgouesportshome.files.wordpress.com/2020/08/orig_494006.jpg");
-    text-align: center;
-  }
-
-  .mainSectionMarginOpacity {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-top: 27rem;
-    padding-bottom: 27rem;
-    background: linear-gradient(
-      180deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-
-  /*Selectores de la seleccion del campeon*/
-
-  .choose-your-champion {
-    align-items: center;
-  }
-
-  .chooseYourChampionMargin {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 1rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background: rgb(20, 24, 27);
-    background: linear-gradient(
-      0deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-
-  /*Selectores del filtro de seleccion de campeones*/
-
-  /*Barra de navegación de filtros*/
-  .filter-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    height: 7vh;
-    background: linear-gradient(
-      270deg,
-      rgba(20, 24, 27, 0) 0%,
-      rgba(20, 24, 27, 1) 100%
-    );
-  }
-  /* Buscador de campeones por nombre */
-  .search-bar {
-    font-family: "Beaufort for LOL Bold";
-    font-size: 1.7rem;
-    text-align: center;
-    justify-content: center;
-    padding: 0.1rem;
-    border: none;
-    border-radius: 0.5rem;
-    outline: none;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    color: var(--color-gold);
-    background-color: var(--color-gray-bar);
-  }
-
-  .search-bar:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  /* Área en general de filtro de campeones*/
-  .champClass {
-    text-decoration: none;
-    font-family: "Beaufort for LOL Bold";
-    /* font-size: 1.2rem; */
-    text-align: center;
-    color: var(--color-gold);
-    border: none;
-    padding: 1rem;
-  }
-
-  .champClass:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  /* Botones de campeones  all, assassins, fighters, mages, marksmen, supports, tanks*/
-  .champClass_button {
-    justify-content: center;
-    background-color: rgba(17, 17, 17, 0);
-    border: none;
-    font-size: 1.7rem;
-    font-family: "Beaufort for LOL Bold";
-    color: var(--color-gold);
-  }
-
-  .champClass_button:focus {
-    color: var(--color-white);
-  }
-
-  /* Botones de campeones  difficulty y stats*/
-  .champFilters {
-    float: center;
-    text-decoration: none;
-    display: inline;
-    padding: 0.1rem;
-  }
-
-  /* Botones de campeones  difficulty y stats*/
-  .dropbtn {
-    border: none;
-    cursor: pointer;
-    font-size: 1.7rem;
-    font-family: "Beaufort for LOL Bold";
-    color: var(--color-gold);
-    background-color: rgba(17, 17, 17, 0);
-  }
-
-  /* Botones de campeones  difficulty y stats, desplegable al dar clic*/
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    font-size: 1.7rem;
-    padding: 0.6rem;
-  }
-
-  .dropdown:hover .dropdownContent {
-    display: block;
-  }
-
-  .dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: #525b61;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  .dropdownContent a {
-    color: var(--color-gold);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: "Beaufort for LOL Bold";
-  }
-
-  .dropdownContent a:hover {
-    background-color: #f1f1f1;
-  }
-
-  /* Flex aplicado a mosaico */
-  .champion-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  /* Tamaño de imágenes en mosaico */
-  .champion-image {
-    height: 10vw;
-    padding: 0.5rem;
-    border-top-left-radius: 4rem;
-    border-bottom-right-radius: 4rem;
-    filter: drop-shadow(8px 8px 16px #111111);
-  }
+function hideElement(element) {
+  element.classList.remove("display-on");
+  element.classList.add("display-off");
 }
+
+function showElement(element) {
+  element.classList.remove("display-off");
+  element.classList.add("display-on");
+}
+
+function populateChampion(currentChampion) {
+  let name = currentChampion.name;
+  let title = currentChampion.title;
+  let splash = currentChampion.splash;
+  let blurb = currentChampion.blurb;
+
+  let tags = currentChampion.tags;
+  let difficulty = currentChampion.info.difficulty;
+  let attack = currentChampion.info.attack;
+  let defense = currentChampion.info.defense;
+  let magic = currentChampion.info.magic;
+
+  document.getElementById("champion-title").innerHTML = title;
+  document.getElementById(
+    "champion-face"
+  ).style.backgroundImage = `url('${splash}')`;
+  document.getElementById("champion-name").innerHTML = name;
+  document.getElementById("champion-blurb").innerHTML = blurb;
+
+  document.getElementById("champion-tags").innerHTML = tags;
+  document.getElementById("champion-difficulty").innerHTML = difficulty;
+  document.getElementById("champion-attack").innerHTML = attack;
+  document.getElementById("champion-defense").innerHTML = defense;
+  document.getElementById("champion-magic").innerHTML = magic;
+}
+
+const mainMenuButton = document.getElementById("mainMenuButton");
+
+mainMenuButton.addEventListener("click", () => {
+  hideElement(championContainer);
+  showElement(championCards);
+});
+
+buildCards(championData);
+
+setOnClickEvents();
