@@ -185,10 +185,10 @@
   }
 }
 
-/* ipad pro 11 */
+/* macbook Air */
 @media all and (min-width: 834px) {
   h1 {
-    font-size: 8rem;
+    font-size: 7rem;
     font-family: "Beaufort for LOL Bold";
     color: var(--color-gold);
   }
@@ -200,13 +200,13 @@
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-family: "Beaufort for LOL Bold";
     color: var(--color-gold);
   }
 
   p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-family: "Arial";
     color: var(--color-white);
     text-align: center;
@@ -228,10 +228,10 @@
   /*Menu principal */
   .mainMenu {
     float: left;
-    margin-left: 2vh;
+    margin-left: 1.5vw;
     color: var(--color-gold);
     align-items: baseline;
-    padding: 1vh;
+    padding: 0.2vw;
     text-align: center;
     text-decoration: none;
   }
@@ -244,16 +244,16 @@
   /*Logo menu principal*/
   .logoMainMenu {
     float: left;
-    margin-left: 1vw;
+    margin-left: 0.5vw;
     text-decoration: none;
   }
 
   /*Boton play free */
   .mainMenuHeaderBotton {
     float: right;
-    margin-right: 2rem;
+    margin-right: 2vw;
     border: 3px solid;
-    padding: 1rem;
+    padding: 1vw;
     border-color: var(--color-gold);
     border-radius: 10px;
     text-decoration: none;
@@ -267,12 +267,12 @@
   /*Selectores del footer */
   .footer {
     background-color: var(--color-black);
-    padding-top: 6vw;
-    padding-bottom: 6vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
   }
 
   .logoSocialNetworks {
-    margin: 3vw;
+    margin: 2vw;
   }
 
   .socialNetworks {
@@ -285,8 +285,8 @@
   .logoRiotGames {
     display: flex;
     justify-content: center;
-    margin-right: 5vw;
-    margin-left: 5vw;
+    margin-right: 3vw;
+    margin-left: 3vw;
   }
 
   .riotbarGameRatingRectangle {
@@ -335,9 +335,7 @@
     font-family: "Arial";
     color: var(--color-gray);
     font-size: 1rem;
-    margin-top: 1vw;
     padding-top: 1vw;
-    margin-bottom: 1vw;
   }
 
   .footerCredits {
