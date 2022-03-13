@@ -153,29 +153,60 @@
     <div class="champion-container display-off" id="champion-container">
       <div class="champion">
         <div class="champion-face" id="champion-face">
-          <button id="mainMenuButton"> regresar </button>
-          <h3 id="champion-title"></h3>
-          <h1 id="champion-name"></h1>
 
-          <p id="champion-blurb"></p>
+          <button id="mainMenuButton" class="mainMenuButton"> << Back to champions </button>
 
-          <h4 id="champion-tags"></h4>
-          <h4>Difficulty:
+          <h3 id="champion-title" class="champion-title"></h3>
+          <h1 id="champion-name" class="champion-name"></h1>
+          <p id="champion-blurb" class="champion-blurb"></p>
+          <p id="champion-tags" class="champion-tags"></p>
+
+          <div class="champInfoDetail">
+            <p class="infoDetail">Difficulty:</p>
             <p id="champion-difficulty" class="infoParagraph"></p>
-          </h4>
+          </div>
         </div>
-        <div class="champion-stats">
 
-          <p>Attack:
-          <p id="champion-attack"></p>
-          </p>
-          <p>Defense:
-          <p id="champion-defense"></p>
-          </p>
-          <p>Magic:
-          <p id="champion-magic"></p>
-          </p>
-
+        <div class="placeInfo">
+         <div class="champion-stats">
+           <div class="champInfoDetail">
+              <p class="infoDetail">Attack:
+                <p id="champion-attack" class="infoParagraph"></p>
+              </p>
+            </div>
+            <div class="champInfoDetail">
+              <p class="infoDetail">Defense:
+               <p id="champion-defense" class="infoParagraph"></p>
+              </p>
+           </div>
+            <div class="champInfoDetail">
+             <p class="infoDetail">Magic:
+               <p id="champion-magic" class="infoParagraph"></p>
+             </p>
+           </div>
+          </div>
+          <div class="champion-substats">
+            <div class="champInfoDetail">
+             <p class="infoDetail">HP:
+               <p id="champion-hp" class="infoParagraph"></p>
+             </p>
+           </div>
+           <div class="champInfoDetail">
+              <p class="infoDetail">MP:
+                <p id="champion-mp" class="infoParagraph"></p>
+              </p>
+            </div>
+           <div class="champInfoDetail">
+              <p class="infoDetail">Armor:
+                <p id="champion-armor" class="infoParagraph"></p>
+              </p>
+            </div>
+            <div class="champInfoDetail">
+              <p class="infoDetail">Spellblock:
+                <p id="champion-spellblock" class="infoParagraph"></p>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
